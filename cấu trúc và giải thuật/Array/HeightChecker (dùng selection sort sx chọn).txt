@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+
+namespace baitap
+{
+    class Program
+    {
+
+        public int HeightChecker(int[] heights)
+        {
+            int n = heights.Length;
+            int[] copy = new int[n];
+
+            Array.Copy(heights, copy, n);
+            // selection sort
+            for (int i = 0; i < n; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (copy[j] < copy[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+                if (minIndex != i)
+                {
+                    int t = copy[i];
+                    copy[i] = copy[minIndex];
+                    copy[minIndex] = t;
+                }
+            }
+            // so sánh mảng mới và cũ
+            int count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (heights[i] != copy[i])
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+        public void X(int[] n)
+        {
+            for (int i = 0; i < n.Length; i++)
+            {
+                Console.Write("{0} ", n[i]);
+            }
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int[] n = { 1, 1, 4, 2, 1, 3 };
+
+
+            Program program = new Program();
+            Console.WriteLine("{0}", program.HeightChecker(n));
+            
+
+
+
+
+
+        }
+    }
+}
+
+

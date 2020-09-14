@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int m, n, m2, n2, i, j;
+            int[,] a = new int[100, 100];
+            int[,] b = new int[100, 100];
+            int[,] c = new int[100, 100];
+
+            Console.Write("\nNhap so hang va so cot cua ma tran :\n");
+            //nhap m hàng , n cột
+            Console.Write("Nhập Số Hàng(m): ");
+            m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhập Số Cột(n): ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+
+            //nhap các phần tử vào mảng
+            for (i = 0; i < m; i++)
+            {
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("Phần tử của ma trận 1 [{0},{1}]: ", i, j);
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+
+            Console.WriteLine("Mảng ban đầu");
+            for (i = 0; i < m; i++)
+            {
+                Console.Write("\n");
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("{0} ", a[i, j]);
+                }
+            }
+            int sum = 0;
+            for (i = 0; i < m; i++)
+            {
+                Console.Write("\n");
+                for (j = 0; j < n; j++)
+                {
+                    if (i == j)
+                    {
+                        sum = sum + a[i, j];
+                    }
+                }
+            }
+            Console.WriteLine("tổng dg chéo chính là : {0}", sum);
+
+            Console.Write("\n\n");
+        }
+    }
+
+}
+

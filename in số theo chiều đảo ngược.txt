@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+
+
+            int n, a, sum = 0;
+
+            Console.Write("\n");
+            Console.Write("Ve tam giac Pascal trong C#:\n");
+            Console.Write("---------------------------");
+            Console.Write("\n\n");
+
+            Console.Write("Nhap so bất kỳ: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (int i = n; n != 0; n = n / 10)
+            {
+                a = n % 10;
+                Console.Write("{0}", sum * 10  + a);
+            }
+
+        }
+    }
+}

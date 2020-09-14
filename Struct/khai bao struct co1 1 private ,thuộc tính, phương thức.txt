@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        struct Khaibao
+        {
+            private int num;
+
+            public int n
+            {
+                get
+                {
+                    return num;
+                }
+                set
+                {
+                    if (value < 50)
+                    {
+                        num = value;
+                    }
+                }
+            }
+            public void clsMethod()
+            {
+                Console.WriteLine("\nGia tri duoc luu giu la: {0}\n", num);
+            }
+
+        }
+
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            int dd = 0, mm = 0, yyyy = 0,n;
+            string name;
+            int total = 0;
+            Console.Write("Mời Nhập n :");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Khaibao newStruct = new Khaibao();
+            newStruct.n = n;
+            newStruct.clsMethod();
+            
+
+
+        }
+    }
+}
+
+

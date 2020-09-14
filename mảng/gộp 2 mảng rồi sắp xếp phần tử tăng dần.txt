@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int[] a = new int[100];
+            int[] b = new int[100];
+            int[] c = new int[100];
+            int n, m, s, i, k, j;
+
+            Console.Write("nhập số lượng phần tử trong mảng a[]: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            //nhập mảng
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("phần tử thứ {0}: ", i);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            //in mảng vừa nhập
+            Console.Write("In mảng a[] vừa nhập: ");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0} ", a[i]);
+            }
+            Console.Write("\n");
+            Console.Write("nhập số lượng phần tử trong mảng b[]: ");
+            m = Convert.ToInt32(Console.ReadLine());
+            //nhập mảng
+            for (i = 0; i < m; i++)
+            {
+                Console.Write("phần tử thứ {0}: ", i);
+                b[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            //in mảng vừa nhập
+            Console.Write("In mảng b[] vừa nhập: ");
+            for (i = 0; i < m; i++)
+            {
+                Console.Write("{0} ", b[i]);
+            }
+            Console.Write("\n");
+
+            //kích cỡ của mảng tròn  = tổng kích cỡ 2 mảng + lại
+            s = m + n;
+            for (i = 0;  i < n; i++)
+            {
+                c[i] = a[i];
+            }
+            for (k = 0; k < m; k++)
+            {
+                c[i] = b[k];
+                i++;
+            }
+            // sắp xếp
+            for (i = 0; i < s; i++)
+            {
+                for (j = 0; j < s - 1; j++)
+                {
+                    if (c[j] >= c[j + 1])
+                    {
+                        k = c[j + 1];
+                        c[j + 1] = c[j];
+                        c[j] = k;
+                    }
+                }
+            }
+            // in mảng c[]
+            Console.Write("\nMang tron da duoc sap xep theo thu tu tang dan:\n");
+            for ( i = 0; i < s; i++)
+            {
+                Console.Write("{0} ", c[i]);
+            }
+        }
+    }
+}

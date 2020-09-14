@@ -1,0 +1,13 @@
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\bin\Debug\netcoreapp3.1\PizzaStore.exe
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\bin\Debug\netcoreapp3.1\PizzaStore.deps.json
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\bin\Debug\netcoreapp3.1\PizzaStore.runtimeconfig.json
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\bin\Debug\netcoreapp3.1\PizzaStore.runtimeconfig.dev.json
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\bin\Debug\netcoreapp3.1\PizzaStore.dll
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\bin\Debug\netcoreapp3.1\PizzaStore.pdb
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.csprojAssemblyReference.cache
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.AssemblyInfoInputs.cache
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.AssemblyInfo.cs
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.csproj.CoreCompileInputs.cache
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.dll
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.pdb
+D:\data desktop\bài tập c#\Pizza Store (OOP)\PizzaStore\PizzaStore\obj\Debug\netcoreapp3.1\PizzaStore.genruntimeconfig.cache

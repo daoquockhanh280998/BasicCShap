@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+
+namespace baitap
+{
+    class Program
+    {
+
+        public bool CheckIfExist(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[i] == arr[j] * 2 || arr[j] == arr[i] * 2)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public void X(int[] n)
+        {
+            for (int i = 0; i < n.Length; i++)
+            {
+                Console.Write("{0} ", n[i]);
+            }
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int[] n = { 10, 2, 5, 3 };
+
+
+            Program program = new Program();
+            program.CheckIfExist(n);
+
+
+
+
+        }
+    }
+}
+
+

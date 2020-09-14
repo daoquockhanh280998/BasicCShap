@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VD_VỀ_CLASS
+{
+    class Cat
+    {
+        public double Weight;
+        public double Height;
+
+        // tạo contructor k tham số truyền vào 
+        public Cat()
+        {
+            Weight = 10;
+            Height = 100;
+        }
+
+        // tạo contructor có tham số truyền vào 
+        public Cat(int w, int h)
+        {
+            Weight = w;
+            Height = h;
+        }
+
+        public void info()
+        {
+            Console.WriteLine("Weight = " + Weight + "Height = " + Height);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat BlackCat = new Cat();
+            Cat WhileCat = new Cat(20, 200);
+            // nếu như k truyền tham số vào thì mặc định khi chạy chương trình sẽ gọi contructor k tham số 
+            BlackCat.info();
+            WhileCat.info();
+        }
+    }
+}

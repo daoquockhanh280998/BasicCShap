@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Solution
+{
+
+    static void Main(string[] args)
+    {
+        //tao mot doi tuong DirectoryInfo
+        DirectoryInfo mydir = new DirectoryInfo(@"D:\data desktop\baitapc#\baitap\baitap\bin\Debug");
+
+        // lay cac file trong thu muc nay, bao gom ten va kich co file
+        FileInfo[] f = mydir.GetFiles();
+        foreach (FileInfo file in f)
+        {
+            Console.WriteLine("Ten file: {0} Kich co: {1}", file.Name, file.Length);
+        }
+        // nhap ten file
+        Console.WriteLine("nhap tên file ");
+        string filePath = Console.ReadLine();
+       
+     
+
+        if (File.Exists(filePath))
+        {
+            Console.WriteLine(filePath + " exist");
+            Console.WriteLine("Please enter a new name for this file:");
+            Console.WriteLine("nhap tên file mới ");
+            string newNameFile = Console.ReadLine();
+
+            if (newNameFile != string.Empty)
+            {
+                File.Move(filePath, newNameFile);
+            }
+            if (File.Exists(newNameFile))
+            {
+                Console.WriteLine("The file was renamed to " + newNameFile);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Path " + filePath + " does not exist.");
+        }
+
+        Console.ReadKey();
+    }
+
+
+}

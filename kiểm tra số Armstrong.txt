@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+           
+
+            int num, r, sum = 0, temp;
+
+
+            Console.Write("\n");
+            Console.Write("Kiem tra so armstrong trong C#:\n");
+            Console.Write("------------------------------");
+            Console.Write("\n\n");
+
+            Console.Write("Nhap mot so bat ky: ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            for (temp = num; num != 0; num = num / 10)
+            {
+                r = num % 10;
+                sum = sum + (r * r * r);
+            }
+            if (sum == temp)
+                Console.Write("So {0} la so Armstrong.\n", temp);
+            else
+                Console.Write("So {0} khong phai la so Armstrong.\n", temp);
+
+        }
+    }
+}

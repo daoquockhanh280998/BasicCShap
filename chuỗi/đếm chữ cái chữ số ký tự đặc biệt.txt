@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string a;
+            int chucai = 0, so = 0, kytu = 0;
+            Console.Write("nhap chuoi a: ");
+            a = Console.ReadLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                if ((a[i] >= 'a' && a[i] <= 'z') || (a[i] >= 'A' && a[i] <= 'Z'))
+                {
+                    chucai++;
+                }
+                else if (a[i] >= '0' && a[i] <= '9')
+                {
+                    so++;
+                }
+                else
+                {
+                    kytu++;
+                }
+
+            }
+            Console.WriteLine("chuoi nay co: {0} chu cai\n {1} chu so\n {2}ky tu dac biet", chucai, so, kytu);
+
+
+        }
+    }
+
+}
+

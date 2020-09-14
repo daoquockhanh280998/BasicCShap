@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    // tao mot class  
+    class aNewClass
+    {
+        public int x;
+        public int y;
+    }
+    //tao mot struct  
+    struct aNewStruc
+    {
+        public int x;
+        public int y;
+    }
+
+    class TestCsharp
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("\nTao struct, gan gia tri va goi struct trong C#:\n");
+            Console.Write("------------------------------------------------\n");
+            aNewClass ClassNum1 = new aNewClass();
+            ClassNum1.x = 75;
+            ClassNum1.y = 95;
+
+            //  ClassNum2 la mot kieu cua ClassNum1   
+            aNewClass ClassNum2 = ClassNum1;
+            ClassNum1.x = 7500;
+            ClassNum1.y = 9500;
+            Console.WriteLine("\nThuc hien hoat dong gan trong Class: " +
+                " x:{0},   " + "y:{1}", ClassNum2.x, ClassNum2.y);
+            aNewStruc StrucNum1 = new aNewStruc();
+            StrucNum1.x = 750;
+            StrucNum1.y = 950;
+
+            //  StrucNum2 la mot kieu cua StrucNum1 type           
+            aNewStruc StrucNum2 = StrucNum1;
+            StrucNum1.x = 75;
+            StrucNum1.y = 95;
+            Console.WriteLine("Thuc hien hoat dong gan trong Struct:  " 
+                + " x:{0},  y:{1}\n\n", StrucNum2.x, StrucNum2.y);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+

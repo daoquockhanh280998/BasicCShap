@@ -1,0 +1,29 @@
+Tính đóng gói là việc người lập trình che dấu thành phần bên trong 1 class k để cho bên ngoài nhìn thấy = cách sd tính đóng gói khi đó người lập trình thiết lập
+thuộc tính bên trong = Private  mặc định nếu 1 class k thiết lập phạm vi truy cập thì mặc định sẽ là private và bên trong class cũng vậy 
+Một vấn đề đặt ra là nếu như người bên ngoài muốn thiết lập hay thay đổi giá trị của thuộc tính bên trong thì phải làm như thể nào
+Đến đây ta phải thiết lập cho người bên ngoài sd PHƯƠNG THỨC TRUY VẤN và PHƯƠNG THỨC CẬP NHẬT 
+PHƯƠNG THỨC TRUY VẤN là phương thức giúp người dùng có thể xem dc dữ liệu của một thuộc tính nào đó chỉ cần trả về giá trị phương thức là đủ vd RETURN 0;
+	PHƯƠNG THỨC TRUY VẤN NÊN bắt đầu = từ khóa get và kèm theo tên thuộc tính tương ứng vd:getHoTen() , getPHUONGTHUC(), ...
+	PHƯƠNG THỨC TRUY VẤN có kiểu trả về trùng với kiểu dữ liệu thuộc tính tương ứng va k tham số truyền vào
+PHƯƠNG THỨC CẬP NHẬT  Là phương thức giúp người dùng thay đổi dc giá trị bên trong (Có thể kt tính đúng đắn tr khi truyền vào)
+	PHƯƠNG THỨC CẬP NHẬT NÊN bắt đầu = từ khóa set và kèm theo tên thuộc tính tương ứng vd:setHoTen() , setPHUONGTHUC(), ...
+		PHƯƠNG THỨC TRUY VẤN có kiểu trả về là void và có 1 tham số truyền vào , trùng với kiểu dữ liệu thuộc tính tương ứng
+	Nếu thuộc tính là bool thì bắt đầu = từ khóa is
+
+Sau này phương thức get và set dc nâng câp lên thành 1 property Sử dụng property, chúng ta có thể thao tác với các dữ liệu được bảo vệ trong đối tượng một 
+cách rất tự nhiên giống như là truy cập vào một biến dữ liệu kiểu public.
+vd:
+kiểu_trả_về biến;
+chỉ_định_từ_truy_xuất kiểu_trả_về tên_property
+{
+set { biến = value; }
+get { return biến; }
+}
+
+
+int stuId;
+public int StuId
+{
+set { stuId = value; }
+get { return stuId; }
+}

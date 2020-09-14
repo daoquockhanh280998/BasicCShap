@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            // Vẽ tam giác số 3
+            //      1
+            //     2 3
+            //    4 5 6
+            //   7 8 9 10
+
+            int i, j, bien_dem, k, t = 1;
+            int n, bien = 1;
+            Console.Write("nhap sô bất kỳ :");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            bien_dem = n + n - 1;
+            for (i = 1; i <= n; i++)
+            {
+                for (k = bien_dem; k >= 1; k--)
+                {
+                    Console.Write("-");
+                }
+                for (j = 1; j <= i; j++)
+                    Console.Write("{0} ", t++);
+                Console.Write("\n");
+                bien_dem--;
+            }
+        }
+    }
+}

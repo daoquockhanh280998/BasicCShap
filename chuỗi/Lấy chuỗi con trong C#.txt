@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string a, m; //khai bao mot chuoi
+            int n, vt, sl;
+            Console.Write("Nhap mot chuoi: ");
+            a = Console.ReadLine();
+            n = a.Length;
+            Console.Write("Nhap vi tri: ");
+            vt = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhap do dai: ");
+            sl = Convert.ToInt32(Console.ReadLine());
+            char[] b = new char[sl];
+            Console.WriteLine("\n");
+            b = a.ToCharArray(0, n);
+
+            for (int i = 0; i < sl; i++)
+            {
+                Console.Write("{0}", b[vt + i - 1]);
+            }
+            Console.Write("\n\n");
+
+
+        }
+    }
+
+}
+

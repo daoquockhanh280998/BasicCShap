@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Test1
+{
+    //CHo 1 mảng số nguyên array ngẫu nhiên  = 10 phần tử
+    //viết ra hàm sắp xếp mảng số nguyên 
+    //viết ra hàm tìm ra số lớn nhất trong mảng
+    public class Array
+    {
+        Random r = new Random();
+        int[] array = new int[10];
+        public void RandomArray()
+        {
+            Console.WriteLine("Mảng Ngẫu Nhiên Là: ");
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = array[i] + r.Next(10);
+                Console.Write("{0}\t", array[i]);
+            }
+            Console.Write("\n");
+        }
+        public void SortArray()
+        {
+            int tam;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = i + 1; j < 10; j++)
+                {
+                    if (array[j] < array[i])
+                    {
+                        tam = array[i];
+                        array[i] = array[j];
+                        array[j] = tam;
+                    }
+
+                }
+            }
+            Console.WriteLine(" Mảng Tăng Dần:");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("{0}\t", array[i]);
+            }
+            Console.Write("\n");
+        }
+
+        public void MaxArray()
+        {
+           
+            int max = array.Max();
+            Console.WriteLine("Số Lớn Nhất Trong Mảng:{0} ",max);
+        }
+
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+
+            Array array = new Array();
+            array.RandomArray();
+            array.SortArray();
+            array.MaxArray();
+
+        }
+    }
+}

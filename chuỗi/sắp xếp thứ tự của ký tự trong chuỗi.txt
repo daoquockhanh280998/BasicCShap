@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string a; //khai bao mot chuoi
+            int  n;
+            Console.Write("Nhap mot chuoi: ");
+            a = Console.ReadLine();
+            n = a.Length;
+            //sử dụng hàm tochararray để chuyển từ chuỗi string sang mảng kiểu char
+            char[] c = new char[n];
+            c = a.ToCharArray(0, n);
+            // sử dụng hàm sort để sắp xếp mảng b :))
+            Array.Sort(c);
+            Console.Write("Sau khi sap xep, chuoi co dang: \n");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("{0} ", c[i]);
+            }
+            Console.WriteLine("\n");
+
+
+        }
+    }
+
+}
+

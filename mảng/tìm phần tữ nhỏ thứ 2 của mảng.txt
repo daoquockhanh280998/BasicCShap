@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int[] a = new int[100];
+            int[] chan = new int[100];
+            int[] le = new int[100];
+            int n, m = 0, i, j, vt, biendem = 0, min = 0, min2 = 0, tam;
+
+            Console.Write("Nhap so phan tu can luu giu trong mang: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Nhap {0} phan tu vao trong mang:\n", n);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("Phan tu - {0}: ", i);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.Write("In Các Phần Tử Vừa Nhập\n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0} ", a[i]);
+            }
+            min = 0;
+            // tìm phần tử lớn thứ 2 của mảng
+            for (i = 0; i < n; i++)
+            {
+                if (min > a[i])
+                {
+                    min = a[i];
+                    m = i;
+                }
+            }
+            min2 = 99999;
+            for (j = 0; j < n; j++)
+            {
+                if (j == m)
+                {
+                    i++;
+                    i--;
+                }
+                else
+                {
+                    if (min2 > a[j])
+                    {
+                        min2 = a[j];
+                    }
+                }
+            }
+            Console.Write("Phan tu lon thu hai trong mang la:  {0} \n\n", min2);
+        }
+
+    }
+}

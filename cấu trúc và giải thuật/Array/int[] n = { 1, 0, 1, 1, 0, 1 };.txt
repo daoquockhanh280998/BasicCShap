@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static int FindMaxConsecutiveOnes(int[] nums)
+        {
+            int c = 0;
+            int max = 0;
+            int n = nums.Length;
+            for (int i = 0; i < n; i++)
+            {
+                if (nums[i] == 1)
+                {
+                    c++;
+                    max = max > c ? max : c;
+                }
+                else
+                {
+                    c = 0;
+
+                }
+            }
+            return max;
+
+
+        }
+
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int[] n = { 1, 0, 1, 1, 0, 1 };
+
+            Console.WriteLine("{0}", FindMaxConsecutiveOnes(n));
+
+
+
+
+        }
+    }
+}
+
+

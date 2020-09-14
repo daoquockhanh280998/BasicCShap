@@ -1,0 +1,30 @@
+bình thường thuộc tính, phương thức sẽ có đặc điểm là chỉ dc sử dung6 khi tạo ra đối tượng ,dc gọi thông qua tên đối tượng còn gọi là intent
+vd SinhVien sinhvien = New SinhVien();
+	sinhvien.hoten;
+còn nếu sử dụng biến tĩnh Staticthuộc tính, phương thức sẽ dc gọi thông qua tên lớp , dc khởi tạo 1 lần duy nhất khi biên dich56 trương trình . dc hủy kt thúc 
+chương trình
+Có 4 loại thành viên tĩnh chính:
+
+Biến tĩnh (static variable).
+	Một biến dùng chung cho mọi đối tượng thuộc lớp.
+	Nó được khởi tạo vùng nhớ 1 lần duy nhất ngay khi chương trình được nạp vào bộ nhớ để thực thi và huỷ khi kết thúc chương trình.
+	
+Phương thức tĩnh (static method).
+	dùng chung của lớp. Được gọi thông qua tên lớp và không cần khởi tạo bất kỳ đối tượng nào, từ đó tránh việc lãng phí bộ nhớ.
+	Hỗ trợ trong việc viết các hàm tiện ích để sử dụng lại.
+	
+Lớp tĩnh (static class).
+	Chỉ chứa các thành phần tĩnh (biến tĩnh, phương thức tĩnh).
+	Không thể khai báo, khởi tạo 1 đối tượng thuộc lớp tĩnh.
+	Với 2 đặc điểm trên có thể thấy lớp tĩnh thường được dùng với mục đích khai báo 1 lớp tiện ích chứa các hàm tiện ích hoặc hằng số vì:
+	rang buộc các thành phần bên trong là static\
+	khong cho phép tạo ra cac đối tượng dư thừa trành lãng phí bộ nhớ
+	
+	trong c# có rất nhiều lớp tĩnh vd Class Math dùng chó việc tính toán chưa các hằng số ,phuong thức hổ trợ tính toán như sin , cos , tan ,..
+	
+
+Phương thức khởi tạo tĩnh (static constructor).
+	Không được phép khai báo phạm vi truy cập. Nếu cố tình làm điều này C# sẽ báo lỗi khi biên dịch. (access modifiers are not allowed on static constructors)
+	Constructor tĩnh sẽ được gọi 1 lần duy nhất khi chương trình được nạp vào bộ nhớ để thực thi như là 1 cách để ta thiết lập một số thông số theo 
+	ý muốn trước khi có bất kỳ đối tượng nào được tạo ra.
+	Constructor tĩnh cũng giống phương thức tĩnh nên không thể gọi các thuộc tính không phải static.

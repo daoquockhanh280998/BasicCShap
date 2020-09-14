@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // in bảng cửu chương
+            int n = 0;
+            int kq = 0;
+            //Console.Write("Nhập n: ");
+            //n = int.Parse(Console.ReadLine());
+            do
+            {
+                int  nhan = 1;
+                Console.WriteLine("Bảng cửu chương {0}", n);
+                do
+                {
+                    kq = n * nhan;
+                    Console.WriteLine("{0} x {1} = {2}", n, nhan, kq);
+                    nhan++;
+
+                } while (nhan <= 10);
+
+                Console.WriteLine();
+                n++;
+
+            } while (n <=9);
+
+
+        }
+    }
+
+}
+

@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Solution
+{
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("\nChuong trinh ghi file trong C#");
+        Console.WriteLine("-----------------------------\n");
+        StreamWriter myfile = File.AppendText("text.docx");// Nếu k tạo text.docx tr thì nó sẽ tự tạo r ghi vào
+        string line;
+
+        do
+        {
+            Console.WriteLine("nhap câu text");
+            line = Console.ReadLine();
+
+            if (line != "")
+            {
+                myfile.WriteLine(line);
+            }
+        } while (line != "") ;
+
+        myfile.Close();
+
+
+        Console.ReadKey();
+    }
+
+
+}

@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+
+namespace baitap
+{
+    class Program
+    {
+
+        public bool ValidMountainArray(int[] A)
+        {
+            int n = A.Length;
+            bool b = true;
+            if (n < 3)
+            {
+                return false;
+            }
+            for (int i = 0; i + 1 < n; i++)
+            {
+                int j = i + 1;
+                if (A[i] > A[j]) // dãy giảm
+                {
+                    if (b == false)
+                    {
+
+                    }
+                    else // b= false
+                    {
+                        if (i == 0)
+                        {
+                            return false;
+                        }
+                        b = false;
+                    }
+                }
+                else if (A[i] < A[j]) // day tăng
+                {
+                    if (b == true)
+                    {
+
+                    }
+                    else // dãy đang xét là giảm b=false
+                    {
+                        return false;
+                    }
+                }
+                else //a[i] == a[j]
+                {
+                    return false;
+                }
+            }
+            if (b == false) // dãy đang xét cuối cùng là dãy giảm
+            {
+                return true;
+            }
+
+            return false;
+
+        }
+        public void X(int[] n)
+        {
+            for (int i = 0; i < n.Length; i++)
+            {
+                Console.Write("{0} ", n[i]);
+            }
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int[] n = { 10, 2, 5, 3 };
+
+
+            Program program = new Program();
+            program.CheckIfExist(n);
+
+
+
+
+        }
+    }
+}
+
+

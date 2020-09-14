@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int a, b,p,ucln =1;
+            Console.WriteLine("nhap a: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("nhap b: ");
+            b = Convert.ToInt32(Console.ReadLine());
+
+            p = (a < b) ? a : b;
+            for (int i = 1; i <= p; i++)
+            {
+                if (a % i == 0 && b % i == 0)
+                {
+                    ucln = i;
+                }
+            }
+            Console.WriteLine("ước số chung lớn nhất là : {0}", ucln);
+
+        }
+    }
+}

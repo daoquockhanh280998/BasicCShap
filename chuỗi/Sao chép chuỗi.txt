@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string a,tam;
+            int chucai = 0, so = 0, kytu = 0;
+            Console.Write("nhap chuoi a: ");
+            a = Console.ReadLine();
+            int n = a.Length;
+            string[] b = new string[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                b[i] = a[i].ToString();
+                kytu++;
+            }
+            Console.Write("\nIn chuoi ban dau: {0}\n", a);
+            Console.Write("In chuoi sao: {0}\n", string.Join("", b));
+            Console.Write("So ky tu da duoc sao chep: {0}\n\n", kytu);
+
+        }
+    }
+
+}
+

@@ -1,0 +1,45 @@
+using System;
+
+namespace VietJackCsharp
+{
+    //tao mot class
+    class newClass
+    {
+        public int n;
+    }
+    //tao mot struct
+    struct newStruct
+    {
+        public int n;
+    }
+    class TestCsharp
+    {
+        public static void trackStruct(newStruct st)
+        {
+            st.n = 8;
+        }
+        public static void tracClass(newClass cl)
+        {
+            cl.n = 8;
+        }
+        public static void Main()
+        {
+            Console.Write("\nTruyen struct va instance cua class vao phuong thuc:\n");
+            Console.Write("-----------------------------------------------------\n");
+            newStruct ns = new newStruct();
+            newClass nc = new newClass();
+            ns.n = 5;
+            nc.n = 5;
+            //gia tri cua cac truong trong struct khong bi thay doi khi chung ta truyen instance   
+            //cua struct nay, boi vi chi co ban sao cua struct se duoc truyen vao phuong thuc trackStruct       
+            trackStruct(ns);
+            //gia tri cua cac truong trong class bi thay doi khi chung ta truyen instance  
+            //cua class nay, boi vi tham chieu toi class duoc truyen vao phuong thuc tracClass         
+            tracClass(nc);
+            Console.WriteLine("\nns.n = {0}", ns.n);
+            Console.WriteLine("nc.n = {0}\n", nc.n);
+
+            Console.ReadKey();
+        }
+    }  
+}

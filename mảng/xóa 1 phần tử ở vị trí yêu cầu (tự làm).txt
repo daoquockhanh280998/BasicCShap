@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int[] a = new int[100];
+            int[] chan = new int[100];
+            int[] le = new int[100];
+            int n, m, i, j, vt, biendem = 0, max = 0, min = 0, tam;
+
+            Console.Write("Nhap so phan tu can luu giu trong mang: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Nhap {0} phan tu vao trong mang:\n", n);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("Phan tu - {0}: ", i);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.Write("In Các Phần Tử Vừa Nhập\n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0} ", a[i]);
+            }
+
+            // xóa phần tử
+            Console.Write("Nhập vị trí cần xóa: ");
+            vt = Convert.ToInt32(Console.ReadLine());
+
+            for (i = 0; i < n -1; i++)
+            {
+                biendem++;
+                if (vt == biendem)
+                {
+                    a[i] = a[i + 1];
+                    vt++;
+                }
+                Console.Write("{0} ", a[i]);
+
+            }
+        }
+
+    }
+}

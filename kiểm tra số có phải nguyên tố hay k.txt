@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            // Kiểm tra số nguyên tố trong C#
+            int n, biendiem = 0;
+            Console.Write("Mời Nhập số N: ");
+            n = int.Parse(Console.ReadLine());
+            if (n <= 1)
+            {
+                Console.WriteLine("Số vừa nhập k phải là số nguyên tố ");
+            }
+            else
+            {
+                for (int i = 1; i <= n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        biendiem++;
+                    }
+                }
+                if (biendiem == 2)
+                {
+                    Console.WriteLine("Số vừa nhập  là số nguyên tố ");
+                }
+                else
+                {
+                    Console.WriteLine("Số vừa nhập k phải là số nguyên tố ");
+                }
+            }
+
+
+        }
+    }
+
+}
+

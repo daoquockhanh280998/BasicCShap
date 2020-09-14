@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string a,tam;
+            int nguyenam = 0, phuam = 0, kytu = 0;
+            Console.Write("nhap chuoi a: ");
+            a = Console.ReadLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] == 'a' || a[i] == 'e' || a[i] == 'i' || a[i] == 'o' ||
+                    a[i] == 'u' || a[i] == 'A' || a[i] == 'E' || a[i] == 'I' ||
+                    a[i] == 'O' || a[i] == 'U')
+                {
+                    nguyenam++;
+                }
+                else if((a[i] >= 'a' && a[i] <= 'z') || (a[i] >= 'A' && a[i] <= 'Z'))
+                {
+                    phuam++;
+                }
+            }
+            Console.WriteLine("nguyen am: {0} \n phu am:{1}", nguyenam, phuam);
+
+        }
+    }
+
+}
+

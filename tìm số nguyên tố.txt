@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            // Tìm số nguyên tố
+            int batdau = 0, ketthuc = 0;
+            int i;
+            Console.Write("nhap sô băt đầu :");
+            batdau = Convert.ToInt32(Console.ReadLine());
+            Console.Write("nhap sô ket thúc :");
+            ketthuc = Convert.ToInt32(Console.ReadLine());
+
+
+            for (i = batdau; i <= ketthuc; i++)
+            {
+                int biendiem = 0;
+                for (int j = 1; j <= i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        biendiem++;
+                    }
+                }
+                if (biendiem == 2 && i != 1)
+                {
+                    Console.WriteLine("{0}", i);
+                }
+            }
+        }
+
+
+    }
+}

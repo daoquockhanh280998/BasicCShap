@@ -1,0 +1,21 @@
+ Console.Write("\nKiem tra co phai la chu cai, sau do kiem tra chu hoa chu thuong trong C#\n");
+            Console.Write("------------------------------------------------------------------------\n");
+            Console.Write("Nhap mot ky tu: ");
+            char ch = (char)Console.Read();
+            if (Char.IsLetter(ch))
+            {
+                if (Char.IsUpper(ch))
+                {
+                    Console.WriteLine("\nKy tu vua nhap la chu hoa.\n");
+                }
+                else
+                {
+                    Console.WriteLine("\nKy tu vua nhap la chu thuong.\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nKy tu vua nhap khong phai la chu cai.\n");
+            }  
+
+            Console.ReadKey();

@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string a;
+            int s = 1, n = 0;
+            Console.Write("nhap chuoi a: ");
+            a = Console.ReadLine();
+            while (n <= a.Length - 1)
+            {
+                if (a[n] == ' ' || a[n] == '\t' || a[n] == '\n')
+                {
+                    s++;
+                }
+                n++;
+            }
+            Console.WriteLine("tong so thu tu o tren la:{0}", s);
+        }
+    }
+
+}
+

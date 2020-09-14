@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int m, n;
+            int[,] a = new int[100, 100];
+            int[,] b = new int[100, 100];
+            int[,] c = new int[100, 100];
+            //nhap m hàng , n cột
+            Console.Write("Nhập Số Hàng(m): ");
+            m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhập Số Cột(n): ");
+            n = Convert.ToInt32(Console.ReadLine());
+            //nhap các phần tử vào mảng
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("Phần tử của ma trận 1 [{0},{1}]: ",i,j);
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("Phần tử của ma trận 2 [{0},{1}]: ", i, j);
+                    b[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Mảng 1");
+            for (int i = 0; i < m; i++)
+            {
+                Console.Write("\n");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("{0}\t", a[i, j]);
+                }
+            }
+            Console.WriteLine("Mảng 2");
+            for (int i = 0; i < m; i++)
+            {
+                Console.Write("\n");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("{0}\t", b[i, j]);
+                }
+            }
+
+            // cộng 2 mảng
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0;  j< n; j++)
+                {
+                    c[i, j] = a[i, j] + b[i, j];
+                }
+            }
+            Console.WriteLine("Mảng 3");
+            for (int i = 0; i < m; i++)
+            {
+                Console.Write("\n");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("{0}\t", c[i, j]);
+                }
+            }
+            Console.Write("\n\n");
+        }
+
+    }
+}

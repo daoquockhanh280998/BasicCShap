@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string a, b;
+            int c1 = 0, c2 = 0, n = 0;
+            Console.Write("nhap chuoi a: ");
+            a = Console.ReadLine();
+            Console.Write("nhap chuoi b: ");
+            b = Console.ReadLine();
+            c1 = a.Length;
+            c2 = b.Length;
+
+            if (c1 == c2)
+            {
+                for (int i = 0; i < c1; i++)
+                {
+                    if (a[i] != b[i])
+                    {
+                        n = 1;
+                        i = c1;
+                    }
+                }
+                if (n == 0)
+                {
+                    Console.WriteLine("\nHai chuoi co do dai bang nhau \nva hai chuoi cung giong nhau.\n\n");
+                }
+                else
+                {
+                    Console.WriteLine("\nHai chuoi co do dai bang nhau \nva hai chuoi khong giong nhau.\n\n");
+                }
+
+            }
+            else if (c1 > c2)
+            {
+                Console.WriteLine("Chuoi 1  > chuoi 2");
+            }
+            else
+            {
+                Console.WriteLine("Chuoi 2  > chuoi 1");
+            }
+            Console.WriteLine("{0} {1}", c1, c2);
+        }
+    }
+
+}
+

@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+           //Tính tổng dãy số trong C# (Phần 1)
+
+            double x, sum, t, d;
+            int i, n;
+
+            Console.Write("\n");
+            Console.Write("Tim tong day so trong C#:\n");
+            Console.Write("------------------------");
+            Console.Write("\n\n");
+
+            Console.Write("Nhap gia tri cua x: ");
+
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhap so phan tu: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            sum = 1; t = 1;
+            for (i = 1; i < n; i++)
+            {
+                d = (2 * i) * (2 * i - 1);
+                t = -t * x * x / d;
+                sum = sum + t;
+            }
+            Console.Write("\nTong = {0}\nSo phan tu = {1}\nGia tri cua x = {2}\n", sum, n, x);
+
+        }
+    }
+}

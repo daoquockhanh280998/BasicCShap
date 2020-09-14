@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Enumeration;
+using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+
+class Solution
+{
+    class SysTemIO
+    {
+        public void CreateForderAndFile(string path, string nameForder, string nameFile)
+        {
+            try
+            {
+                //// cách tạo thư mục và tạo file bên trong thư mục đó
+                // Bước 1: tạo biến để lưu thư mục cần tạo, tên thư mục cần tạo là nameForder
+                // vd dg dẫn path = @"D:\data desktop\baitapc#\Xử Lý File System.IO";
+                string directoryPath = path + @"\" + nameForder;
+                // Bước 2: kiểm tra nếu thư mục "StoredFiles" chưa tồn tại thì tạo mới
+                if (!Directory.Exists(directoryPath))
+                    Directory.CreateDirectory(directoryPath);
+                // Bước 4: tạo tập tin "EmployeeList.txt" trong thư mục "StoredFiles"
+                string filePath = directoryPath + @"\" + nameFile + ".txt";
+                FileStream fs = new FileStream(filePath, FileMode.Create);
+                Console.WriteLine("Đã Tạo File Thành Công Vui Lòng vào đường dẫn " + path + " để kiểm tra");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("không thể tạo dc");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void readFile(string namePath)
+        {
+            // b1:kiểm tra tên file truyền vào có đuôi txt chưa
+
+            // b2: vào thư mục show ra những file có trong thư mục
+            DirectoryInfo mydir = new DirectoryInfo(namePath);
+            FileInfo[] f = mydir.GetFiles();
+            Console.WriteLine("Những File Hiện có trong Thư Mục ");
+            foreach (FileInfo item in f)
+            {
+                Console.WriteLine("Name File: {0}, Size File: {1}", item.Name, item.Length);
+            }
+            // b3 chọn file 
+            Console.WriteLine("Nhập Tên File: ");
+            string nameFile = namePath + @"\" + Console.ReadLine();
+
+            //read file
+
+            string[] lines;
+            string str;
+            if (File.Exists(nameFile))
+            {
+                lines = File.ReadAllLines(nameFile);
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    Console.WriteLine("Line {0}: {1}", i, lines[i]);
+                }
+                Console.WriteLine();
+
+                str = File.ReadAllText(nameFile);
+                Console.WriteLine("String: {0}", str);
+
+            }
+            else
+            {
+                Console.WriteLine("File does not exist");
+            }
+        }
+
+        public void writerFile(string namePath, string nameFile)
+        {
+            string kt = namePath +@"\" + nameFile;
+            if (File.Exists(kt))
+            {
+                string sentence = " ";
+                StreamWriter myfile;
+                myfile = File.CreateText(kt);
+                do
+                {
+                    Console.Write("Nhap mot cau text: ");
+                    sentence = Console.ReadLine();
+                    if (sentence.Length != 0)
+                    {
+                        myfile.WriteLine(sentence);
+                    }
+                }
+                while (sentence.Length != 0);
+                myfile.Close();
+
+
+
+            }
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        Console.OutputEncoding = Encoding.Unicode;
+        Console.WriteLine("nhập dg dẫn tới file");
+        string p = Console.ReadLine();
+     
+        Console.WriteLine("nhập ten file");
+        string fi = Console.ReadLine();
+        SysTemIO si = new SysTemIO();
+        // si.CreateForderAndFile(p, fo, fi);
+        si.writerFile(p,fi);
+
+        Console.ReadKey();
+    }
+
+
+}

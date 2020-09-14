@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+
+namespace baitap
+{
+    class Program
+    {
+
+        public int[] ReplaceElements(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = n - 1; i >= 0; i--)
+            {
+                if (i != n - 1)// a[i] = if a[i] > a[i+1] thì a[i]= a[i]  else a[i] a[i+1]
+                {
+                    arr[i] = arr[i] > arr[i + 1] ? arr[i] : arr[i + 1];
+                }
+            }
+            for (int j = 1; j < n; j++)// dịch sang trái  1 đơn vị
+            {
+                arr[j - 1] = arr[j];
+            }
+            if (n > 0)
+            {
+                arr[n - 1] = -1;
+            }
+            return arr;
+        }
+        public void X(int[] n)
+        {
+            for (int i = 0; i < n.Length; i++)
+            {
+                Console.Write("{0} ", n[i]);
+            }
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int[] n = { 17, 18, 5, 4, 6, 1 };
+
+
+            Program program = new Program();
+            program.X(program.ReplaceElements(n));
+            
+
+
+
+
+        }
+    }
+}
+
+

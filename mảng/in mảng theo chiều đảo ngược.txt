@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            int i, n;
+            int[] a = new int[100];
+
+            Console.Write("\nIn mang theo chieu dao nguoc trong C#:\n");
+            Console.Write("---------------------------------------\n");
+
+            Console.Write("Nhap so phan tu can luu giu trong mang: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.Write("Nhap {0} phan tu vao trong mang: \n", n);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("Phan tu - {0}: ", i);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Write("\nCac phan tu duoc luu giu trong mang la: \n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0} ", a[i]);
+            }
+
+            Console.Write("\n\nIn mang theo chieu dao nguoc: \n");
+            for (i = n - 1; i >= 0; i--)
+            {
+                Console.Write("{0} ", a[i]);
+            }
+            Console.Write("\n\n");
+        }
+    }
+}

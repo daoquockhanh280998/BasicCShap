@@ -1,0 +1,2616 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://www.howkteam.vn/Learn/Lecture/53 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title data-title="Kiểu dữ liệu trong C#">Kiểu dữ liệu trong C# | How Kteam</title>
+<meta name="title" content="Kiểu dữ liệu trong C# | Website hướng dẫn lập trình miễn phí | How Kteam | Free Education">
+<meta name="description" content="Ở bài Biến trong C# chúng ta đã tìm hiểu về biến và có một thành phần không thể thiếu khi khai báo biến – Đó là kiểu dữ liệu. Bài học hôm nay chúng ta sẽ cùng tìm hiểu chi tiết về Kiểu dữ liệu trong C#.">
+<meta name="keywords" content="Kiểu dữ liệu trong C#,C# cơ bản, tự học C#, Kteam, Howkteam,Kiểu dữ liệu dựng sẵn,Kiểu dữ liệu do người dùng định nghĩa,Kiểu dữ liệu tham chiếu,reference">
+
+<meta name="copyright" content="Howkteam">
+<meta name="author" content="Howkteam">
+<meta name="distribution" content="Global">
+<meta name="ROBOTS" content="INDEX, FOLLOW">
+<meta name="google-site-verification" content="Efggt63jNjZKcDAW8mcgYbqfPYDkTjaelBXcH4N5X2A">
+
+<meta name="twitter:card" content="summary">
+<meta property="og:site_name" name="twitter:domain" content="www.howkteam.com">
+<meta property="og:title" name="twitter:title" content="Kiểu dữ liệu trong C# | Website hướng dẫn lập trình miễn phí | How Kteam | Free Education">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://www.howkteam.vn/Learn/Lecture/53">
+<meta property="og:description" name="twitter:description" content="Ở bài Biến trong C# chúng ta đã tìm hiểu về biến và có một thành phần không thể thiếu khi khai báo biến – Đó là kiểu dữ liệu. Bài học hôm nay chúng ta sẽ cùng tìm hiểu chi tiết về Kiểu dữ liệu trong C#.">
+    <meta property="og:image" name="twitter:image" content="https://f.howkteam.vn/Upload/cke/images/1_LOGO%20SHOW%20WEB/1_C%23_AutoC%23/1_C%23%20C%C4%83n%20b%E1%BA%A3n/C%23%20basics%20(5).jpg">
+<meta property="fb:app_id" content="152487515282783">
+
+<link rel="alternate" hreflang="vn-vi" href="https://www.howkteam.vn/">
+<link rel="author" href="https://www.facebook.com/howkteam/">
+<link rel="publisher" href="https://www.facebook.com/howkteam/">
+<link rel="manifest" href="https://www.howkteam.vn/Assets/webpush/manifest.json">
+
+<!-- Adblock Detect -->
+<script src="./Kiểu dữ liệu trong C# _ How Kteam_files/sdk.js.tải xuống" async="" crossorigin="anonymous"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/f.txt"></script><script async="" src="./Kiểu dữ liệu trong C# _ How Kteam_files/analytics.js.tải xuống"></script><script id="facebook-jssdk" src="./Kiểu dữ liệu trong C# _ How Kteam_files/sdk.js(1).tải xuống"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/osd.js.tải xuống"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/f(1).txt"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/f(2).txt" id="google_shimpl"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/adsbygoogle.js.tải xuống"></script>
+
+<!-- Google Ads -->
+<script async="" src="./Kiểu dữ liệu trong C# _ How Kteam_files/f(3).txt"></script>
+
+<!-- End Google Ads -->
+
+    <link href="./Kiểu dữ liệu trong C# _ How Kteam_files/styles" rel="stylesheet">
+
+
+    
+    <link href="./Kiểu dữ liệu trong C# _ How Kteam_files/cmt" rel="stylesheet">
+
+
+<link rel="preload" href="./Kiểu dữ liệu trong C# _ How Kteam_files/f(4).txt" as="script"><script type="text/javascript" src="./Kiểu dữ liệu trong C# _ How Kteam_files/f(4).txt"></script><link rel="preload" href="./Kiểu dữ liệu trong C# _ How Kteam_files/f(5).txt" as="script"><script type="text/javascript" src="./Kiểu dữ liệu trong C# _ How Kteam_files/f(5).txt"></script><style>.cke{visibility:hidden;}</style><script type="text/javascript" async="" src="./Kiểu dữ liệu trong C# _ How Kteam_files/MathJax.js.tải xuống"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="page-container" class="sidebar-o side-scroll page-header-glass page-header-inverse page-header-fixed main-content-narrow sidebar-inverse side-trans-enabled page-header-scroll" style="height: auto !important;">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <!-- Sidebar Scroll Container -->
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 586px;"><div id="sidebar-scroll" style="overflow: hidden; width: auto; height: 586px;">
+                <!-- Sidebar Content -->
+                <div class="sidebar-content">
+                    <!-- Side Header -->
+                    <div class="content-header content-header-fullrow px-15">
+                        <!-- Mini Mode -->
+                        <div class="content-header-section sidebar-mini-visible-b">
+                            <!-- Logo -->
+                            <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
+                                <img width="25" src="./Kiểu dữ liệu trong C# _ How Kteam_files/logo_white 100x100.png">
+                            </span>
+                            <!-- END Logo -->
+                        </div>
+                        <!-- END Mini Mode -->
+                        <!-- Normal Mode -->
+                        <div class="content-header-section text-center align-parent sidebar-mini-hidden">
+                            <!-- Close Sidebar, Visible only on mobile screens -->
+                            <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
+                                <i class="fa fa-times text-danger"></i>
+                            </button>
+                            <!-- END Close Sidebar -->
+                            <!-- Logo -->
+                            <div class="content-header-item">
+                                <a href="https://www.howkteam.vn/">
+                                    <img src="./Kiểu dữ liệu trong C# _ How Kteam_files/kteam_w_70x32.png">
+                                </a>
+                            </div>
+                            <!-- END Logo -->
+                        </div>
+                        <!-- END Normal Mode -->
+                    </div>
+                    <!-- END Side Header -->
+                    <!-- Side User -->
+                    
+    <div class="content-side content-side-full content-side-user h-25 authen-side-mini-hide">
+        <!-- Visible only in normal mode -->
+        <div class="sidebar-mini-hidden-b text-center">
+            <a href="https://www.howkteam.vn/account/register" class="btn btn-sm btn-block btn-hero btn-danger js-click-ripple-enabled" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+                <i class="fas fa-user-plus fa-fw"></i> Đăng ký
+            </a>
+            <a href="https://www.howkteam.vn/account/login?ReturnUrl=%2FLearn%2FLecture%2F53" class="btn btn-sm btn-block btn-hero btn-outline-primary js-click-ripple-enabled" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+                <i class="far fa-user fa-fw"></i> Đăng nhập
+            </a>
+        </div>
+        <!-- END Visible only in normal mode -->
+    </div>
+    <input type="hidden" id="common-authen" value="false">
+
+                    <!-- END Side User -->
+                    <!-- Side Navigation -->
+                    
+<div class="content-side content-side-full">
+    <ul class="nav-main">
+        <li class="nav-main-heading">
+            <span class="sidebar-mini-visible">PG</span>
+            <span class="sidebar-mini-hidden">Pages</span>
+        </li>
+        <li class="position-relative d-block d-lg-none">
+            <a class="nav-submenu" href="https://www.howkteam.vn/learn">
+                <i class="si si-book-open"></i><span class="sidebar-mini-hide">Khóa học</span>
+            </a>
+            <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+<ul>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/lap-trinh-7" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Lập trình</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-c-net-7-5">
+                                Lập trình C# .Net
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-c-7-8">
+                                Lập trình C++
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-android-7-9">
+                                Lập trình Android
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/dieu-truong-hoc-khong-day-7-12">
+                                Điều trường học không dạy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/thu-thuat-lap-trinh-7-17">
+                                Thủ thuật lập trình
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-java-7-18">
+                                Lập trình Java
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/unity3d-7-20">
+                                Unity3D
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/phan-tich-thiet-ke-7-23">
+                                Phân tích thiết kế
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-python-7-37">
+                                Lập trình Python
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-php-7-40">
+                                Lập trình PHP
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/javascript-website-7-42">
+                                JavaScript - (Website)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-front-end-7-44">
+                                Lập trình Front-End
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-mobile-7-45">
+                                Lập trình Mobile
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/microsoft-office-2016-11" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Microsoft Office 2016</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/microsoft-office-2016/microsoft-word-2016-11-6">
+                                Microsoft Word 2016
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/microsoft-office-2016/microsoft-excel-2016-11-16">
+                                Microsoft Excel 2016
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/microsoft-office-2016/microsoft-powerpoint-2016-11-19">
+                                Microsoft PowerPoint 2016
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/it-phan-mem-13" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">IT &amp; Phần mềm</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/it-phan-mem/thu-thuat-may-tinh-13-14">
+                                Thủ thuật máy tính
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/it-phan-mem/huong-dan-cai-dat-13-15">
+                                Hướng dẫn cài đặt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/it-phan-mem/bao-mat-may-tinh-13-36">
+                                Bảo mật máy tính
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/it-phan-mem/phan-cung-bao-mat-13-43">
+                                Phần cứng &amp; Bảo mật
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/do-hoa-hinh-anh-21" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Đồ họa hình ảnh</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/do-hoa-hinh-anh/adobe-photoshop-lightroom-21-22">
+                                Adobe Photoshop LightRoom
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/kinh-te-26" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Kinh tế</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/kinh-te/quan-tri-kinh-doanh-26-27">
+                                Quản trị kinh doanh
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/kinh-te/ke-toan-26-28">
+                                Kế toán
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/kinh-te/nhan-su-26-29">
+                                Nhân sự
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/kinh-te/seo-26-30">
+                                SEO
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/kinh-te/marketing-26-31">
+                                Marketing
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/ngoai-ngu-32" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Ngoại ngữ</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/ngoai-ngu/tieng-anh-32-33">
+                                Tiếng anh
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/ky-nang-mem-34" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Kỹ năng mềm</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/ky-nang-mem/ky-nang-mem-34-35">
+                                Kỹ năng mềm
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="position-relative">
+                <a href="https://www.howkteam.vn/learn/tin-tuc-49" class="nav-submenu">
+                    <span class="sidebar-mini-hide text-uppercase">Tin tức</span>
+                </a>
+                <a data-toggle="nav-submenu" href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right"></a>
+                <ul>
+                        <li>
+                            <a href="https://www.howkteam.vn/learn/tin-tuc/tin-tuc-cong-nghe-49-50">
+                                Tin tức công nghệ
+                            </a>
+                        </li>
+                </ul>
+            </li>
+</ul>
+        </li>
+        <li class="position-relative d-none d-lg-block">
+            <a class="side-nav-learn active" href="https://www.howkteam.vn/learn"><i class="si si-book-open"></i><span class="sidebar-mini-hide">Khóa học</span></a>
+            <a id="nav-item-learn" href="javascript:void(0);" class="position-absolute navbar-expand-right navbar-expand-right-root d-flex"><span class="btn btn-sm btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+        </li>
+        <li>
+            <a class="side-nav-question" href="https://www.facebook.com/howkteam/"><i class="si si-question"></i><span class="sidebar-mini-hide">Hỏi đáp</span></a>
+        </li>
+        <li>
+            <a class="side-nav-doc" href="https://www.howkteam.vn/documentation"><i class="si si-docs"></i><span class="sidebar-mini-hide">Bài viết</span></a>
+        </li>
+        <li>
+            <a class="side-nav-tag" href="https://www.howkteam.vn/tags"><i class="si si-tag"></i><span class="sidebar-mini-hide">Tag</span></a>
+        </li>
+        <li>
+            <a class="side-nav-kter" href="https://www.howkteam.vn/users"><i class="si si-users"></i><span class="sidebar-mini-hide">Kter</span></a>
+        </li>
+        <li>
+            <a class="side-nav-about" href="https://www.howkteam.vn/about"><i class="si si-info"></i><span class="sidebar-mini-hide">Về Kteam</span></a>
+        </li>
+        <li>
+            <a class="side-nav-donate" href="https://www.howkteam.vn/donate"><i class="si si-cup"></i><span class="sidebar-mini-hide">Tài trợ</span></a>
+        </li>
+        <li>
+            <a class="side-nav-contact" href="https://www.howkteam.vn/about/contact"><i class="si si-note"></i><span class="sidebar-mini-hide">Phản hồi</span></a>
+        </li>
+    </ul>
+</div>
+                    <!-- END Side Navigation -->
+                </div>
+                <!-- Sidebar Content -->
+            </div><div class="slimScrollBar" style="background: rgb(205, 205, 205); width: 4px; position: absolute; top: 0px; opacity: 0.9; display: none; border-radius: 7px; z-index: 99; right: 0px; height: 586px;"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 1; z-index: 90; right: 0px;"></div></div>
+            <!-- END Sidebar Scroll Container -->
+        </nav>
+        <!-- END Sidebar -->
+        <!-- Learn Menu -->
+        
+<div class="custom-menu-wrapper" style="display: none">
+    <div class="row gutters-tiny h-100">
+        <div class="col-lg-3 h-100 border-right">
+            <div class="asyncPartial h-100" data-url="/common/sidebarbranchesdesktop"><div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="bg-gray-lighter" id="sidebarBranchList" style="overflow: hidden; width: auto; height: 100%;">
+    <div class="list-group">
+        <div class="input-group p-15">
+            <input type="text" id="sidebarInputSearchBranchMenu" class="form-control" placeholder="Tìm...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-7" onclick="Kteam.renderSidebarMenuCat(7);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/lap-trinh-7">
+                        Lập trình
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-7" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-5" onclick="Kteam.renderSidebarMenuCourse(5);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-c-net-7-5">
+                                    Lập trình C# .Net
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-8" onclick="Kteam.renderSidebarMenuCourse(8);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-c-7-8">
+                                    Lập trình C++
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-9" onclick="Kteam.renderSidebarMenuCourse(9);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-android-7-9">
+                                    Lập trình Android
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-12" onclick="Kteam.renderSidebarMenuCourse(12);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/dieu-truong-hoc-khong-day-7-12">
+                                    Điều trường học không dạy
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-17" onclick="Kteam.renderSidebarMenuCourse(17);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/thu-thuat-lap-trinh-7-17">
+                                    Thủ thuật lập trình
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-18" onclick="Kteam.renderSidebarMenuCourse(18);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-java-7-18">
+                                    Lập trình Java
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-20" onclick="Kteam.renderSidebarMenuCourse(20);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/unity3d-7-20">
+                                    Unity3D
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-23" onclick="Kteam.renderSidebarMenuCourse(23);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/phan-tich-thiet-ke-7-23">
+                                    Phân tích thiết kế
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-37" onclick="Kteam.renderSidebarMenuCourse(37);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-python-7-37">
+                                    Lập trình Python
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-40" onclick="Kteam.renderSidebarMenuCourse(40);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-php-7-40">
+                                    Lập trình PHP
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-42" onclick="Kteam.renderSidebarMenuCourse(42);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/javascript-website-7-42">
+                                    JavaScript - (Website)
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-44" onclick="Kteam.renderSidebarMenuCourse(44);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-front-end-7-44">
+                                    Lập trình Front-End
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-45" onclick="Kteam.renderSidebarMenuCourse(45);">
+                                <a class="" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-mobile-7-45">
+                                    Lập trình Mobile
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-11" onclick="Kteam.renderSidebarMenuCat(11);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/microsoft-office-2016-11">
+                        Microsoft Office 2016
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-11" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-6" onclick="Kteam.renderSidebarMenuCourse(6);">
+                                <a class="" href="https://www.howkteam.vn/learn/microsoft-office-2016/microsoft-word-2016-11-6">
+                                    Microsoft Word 2016
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-16" onclick="Kteam.renderSidebarMenuCourse(16);">
+                                <a class="" href="https://www.howkteam.vn/learn/microsoft-office-2016/microsoft-excel-2016-11-16">
+                                    Microsoft Excel 2016
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-19" onclick="Kteam.renderSidebarMenuCourse(19);">
+                                <a class="" href="https://www.howkteam.vn/learn/microsoft-office-2016/microsoft-powerpoint-2016-11-19">
+                                    Microsoft PowerPoint 2016
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-13" onclick="Kteam.renderSidebarMenuCat(13);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/it-phan-mem-13">
+                        IT &amp; Phần mềm
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-13" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-14" onclick="Kteam.renderSidebarMenuCourse(14);">
+                                <a class="" href="https://www.howkteam.vn/learn/it-phan-mem/thu-thuat-may-tinh-13-14">
+                                    Thủ thuật máy tính
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-15" onclick="Kteam.renderSidebarMenuCourse(15);">
+                                <a class="" href="https://www.howkteam.vn/learn/it-phan-mem/huong-dan-cai-dat-13-15">
+                                    Hướng dẫn cài đặt
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-36" onclick="Kteam.renderSidebarMenuCourse(36);">
+                                <a class="" href="https://www.howkteam.vn/learn/it-phan-mem/bao-mat-may-tinh-13-36">
+                                    Bảo mật máy tính
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-43" onclick="Kteam.renderSidebarMenuCourse(43);">
+                                <a class="" href="https://www.howkteam.vn/learn/it-phan-mem/phan-cung-bao-mat-13-43">
+                                    Phần cứng &amp; Bảo mật
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-21" onclick="Kteam.renderSidebarMenuCat(21);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/do-hoa-hinh-anh-21">
+                        Đồ họa hình ảnh
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-21" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-22" onclick="Kteam.renderSidebarMenuCourse(22);">
+                                <a class="" href="https://www.howkteam.vn/learn/do-hoa-hinh-anh/adobe-photoshop-lightroom-21-22">
+                                    Adobe Photoshop LightRoom
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-26" onclick="Kteam.renderSidebarMenuCat(26);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/kinh-te-26">
+                        Kinh tế
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-26" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-27" onclick="Kteam.renderSidebarMenuCourse(27);">
+                                <a class="" href="https://www.howkteam.vn/learn/kinh-te/quan-tri-kinh-doanh-26-27">
+                                    Quản trị kinh doanh
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-28" onclick="Kteam.renderSidebarMenuCourse(28);">
+                                <a class="" href="https://www.howkteam.vn/learn/kinh-te/ke-toan-26-28">
+                                    Kế toán
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-29" onclick="Kteam.renderSidebarMenuCourse(29);">
+                                <a class="" href="https://www.howkteam.vn/learn/kinh-te/nhan-su-26-29">
+                                    Nhân sự
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-30" onclick="Kteam.renderSidebarMenuCourse(30);">
+                                <a class="" href="https://www.howkteam.vn/learn/kinh-te/seo-26-30">
+                                    SEO
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-31" onclick="Kteam.renderSidebarMenuCourse(31);">
+                                <a class="" href="https://www.howkteam.vn/learn/kinh-te/marketing-26-31">
+                                    Marketing
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-32" onclick="Kteam.renderSidebarMenuCat(32);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/ngoai-ngu-32">
+                        Ngoại ngữ
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-32" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-33" onclick="Kteam.renderSidebarMenuCourse(33);">
+                                <a class="" href="https://www.howkteam.vn/learn/ngoai-ngu/tieng-anh-32-33">
+                                    Tiếng anh
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-34" onclick="Kteam.renderSidebarMenuCat(34);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/ky-nang-mem-34">
+                        Kỹ năng mềm
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-34" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-35" onclick="Kteam.renderSidebarMenuCourse(35);">
+                                <a class="" href="https://www.howkteam.vn/learn/ky-nang-mem/ky-nang-mem-34-35">
+                                    Kỹ năng mềm
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action border-0 pr-50 branch-menu-item-49" onclick="Kteam.renderSidebarMenuCat(49);">
+                    <a class="text-uppercase" href="https://www.howkteam.vn/learn/tin-tuc-49">
+                        Tin tức
+                    </a>
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                </div>
+                <div id="sidebarCatMenuHidden-49" class="d-none">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0 pr-50 cat-menu-item-50" onclick="Kteam.renderSidebarMenuCourse(50);">
+                                <a class="" href="https://www.howkteam.vn/learn/tin-tuc/tin-tuc-cong-nghe-49-50">
+                                    Tin tức công nghệ
+                                </a>
+                                <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="position-absolute navbar-expand-right d-flex"><span class="btn btn-square justify-content-center align-self-center"><i class="fas fa-chevron-right fa-fw"></i></span></a>
+                            </div>
+                    </div>
+                </div>
+
+    </div>
+</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+
+
+<script>
+    $('#sidebarBranchList').slimScroll({
+        height: "100%"
+    });
+    Kteam.filterHtml("#sidebarInputSearchBranchMenu", "#sidebarBranchList > .list-group > div.list-group-item");
+</script></div>
+        </div>
+        <div class="col-lg-3 h-100 border-right" id="sidebarCatMenuWrapperParent" style="display: none">
+            <div id="sidebarCatMenuWrapper" class="h-100 bg-gray-lighter">
+                <div class="input-group p-15">
+                    <input type="text" id="sidebarInputSearchCatMenu" class="form-control" placeholder="Tìm...">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+                <div id="sidebarCatList"></div>
+                <div class="cat-menu-skeleton">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="min-height-20 bg-gray"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 h-100" id="sidebarCourseMenuWrapperParent" style="display: none">
+            <div id="sidebarCourseMenuWrapper" class="h-100 bg-gray-lighter">
+                <div class="input-group p-15">
+                    <input type="text" id="sidebarInputSearchCourseMenu" class="form-control" placeholder="Tìm...">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+                <div id="sidebarCourseList"></div>
+                <div class="course-menu-skeleton">
+                    <div class="list-group">
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="media">
+                                    <div class="w-150px min-height-100 bg-gray mr-3"></div>
+                                    <div class="media-body">
+                                        <div class="min-height-20 bg-gray mb-10"></div>
+                                        <div class="clearfix">
+                                            <div class="min-height-20 w-25 bg-gray mr-10 float-left"></div>
+                                            <div class="min-height-20 w-25 bg-gray float-left"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="media">
+                                    <div class="w-150px min-height-100 bg-gray mr-3"></div>
+                                    <div class="media-body">
+                                        <div class="min-height-20 bg-gray mb-10"></div>
+                                        <div class="clearfix">
+                                            <div class="min-height-20 w-25 bg-gray mr-10 float-left"></div>
+                                            <div class="min-height-20 w-25 bg-gray float-left"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="media">
+                                    <div class="w-150px min-height-100 bg-gray mr-3"></div>
+                                    <div class="media-body">
+                                        <div class="min-height-20 bg-gray mb-10"></div>
+                                        <div class="clearfix">
+                                            <div class="min-height-20 w-25 bg-gray mr-10 float-left"></div>
+                                            <div class="min-height-20 w-25 bg-gray float-left"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item list-group-item-action border-0">
+                                <div class="media">
+                                    <div class="w-150px min-height-100 bg-gray mr-3"></div>
+                                    <div class="media-body">
+                                        <div class="min-height-20 bg-gray mb-10"></div>
+                                        <div class="clearfix">
+                                            <div class="min-height-20 w-25 bg-gray mr-10 float-left"></div>
+                                            <div class="min-height-20 w-25 bg-gray float-left"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none" id="sidebarCourseMenuWrapperCache"></div>
+        </div>
+    </div>
+</div>
+        <!-- END Learn Menu -->
+        <!-- Header -->
+        <header id="page-header" style="z-index: 1035; background-color: transparent;">
+            <!-- Header Content -->
+            <div class="content-header">
+                <!-- Left Section -->
+                <div class="content-header-section" style="display: none;">
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+                    <span class="header-logo-hide">
+                        <a href="https://www.howkteam.vn/">
+                            <img src="./Kiểu dữ liệu trong C# _ How Kteam_files/kteam_w_70x32.png">
+                        </a>
+                    </span>
+                </div>
+                <!-- END Left Section -->
+                <!-- Right Section -->
+                <div class="content-header-section" style="display: none;">
+                    <!-- Open Search Section -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <!-- END Open Search Section -->
+                    
+    <!-- User Dropdown -->
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png" class="avatar-xs align-bottom mr-5">
+            <span class="mr-5">Tài khoản</span>
+            <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
+            <a class="dropdown-item" href="https://www.howkteam.vn/account/login?ReturnUrl=%2FLearn%2FLecture%2F53">
+                <i class="far fa-user fa-fw"></i> Đăng nhập
+            </a>
+            <a class="dropdown-item" href="https://www.howkteam.vn/account/register">
+                <i class="fas fa-user-plus fa-fw"></i> Đăng ký
+            </a>
+        </div>
+    </div>
+
+                </div>
+                <!-- END Right Section -->
+            <div class="focus-learn-header" style="">
+            <div class="mr-15">
+                <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="w-100">
+                <h2 class="mb-10 h4 text-white">Kiểu dữ liệu trong C#</h2>
+                <div class="text-white-op font-size-sm">
+                    <span class="mr-15">
+                        <i class="fa fa-book fa-fw mr-5"></i><a class="font-weight-bold" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban-1">Khóa học lập trình C# căn bản</a>
+                    </span>
+                    <span class="mr-15">
+                        Tạo bởi <a class="font-w600" href="https://www.howkteam.vn/users/12e3dcb4-2cdf-4696-8ca2-977289a74ada">Trần Thành Vi Thanh</a>
+                    </span>
+                    <span class="mr-15 mt-5">
+                        <i class="far fa-fw fa-eye mr-5"></i><span class="text-white">99.874</span>
+                    </span>
+                    <span class="mr-15 mt-5">
+                        <i class="far fa-fw fa-comment mr-5"></i><span class="text-white">17</span>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <a class="btn btn-sm btn-primary btn-noborder btnQuickViewLecture" href="javascript:void(0);" data-src="https://www.youtube.com/embed/yrH7Qe8FXqE?autoplay=1" data-action="/learn/quickviewlecturecontent/53" data-id="53" data-courseid="1">
+                    Học nhanh
+                    <i class="fas fa-arrow-right fa-fw"></i>
+                </a>
+            </div>
+        </div></div>
+            <!-- END Header Content -->
+            <!-- Header Search -->
+            
+<div id="page-header-search" class="overlay-header">
+    <div class="content-header content-header-fullrow">
+<form action="https://www.howkteam.vn/search" method="get">            <div class="input-group">
+                <div class="input-group-prepend">
+                    <!-- Close Search Section -->
+                    <button type="button" class="btn btn-secondary" data-toggle="layout" data-action="header_search_off">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <!-- END Close Search Section -->
+                </div>
+                <input type="text" class="form-control" placeholder="Search or hit ESC.." name="q">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+</form>    </div>
+</div>
+            <!-- END Header Search -->
+        </header>
+        <!-- END Header -->
+        <!-- Main Container -->
+        <main id="main-container" style="height: auto !important; min-height: 168px;" class="position-relative">
+            
+
+
+<!-- Hero -->
+<div class="bg-image" style="background-image: url(&#39;/Content/images/banner/code.jpg&#39;);">
+    <div class="bg-black-op">
+        <div class="content">
+            <div class="py-50 mt-20">
+                <h1 class="h3 text-white font-w700 mb-10">Kiểu dữ liệu trong C#</h1>
+                <h2 class="h5 text-white-op font-w400">Khóa học lập trình C# căn bản</h2>
+                <a class="d-block text-white-op mb-10" href="javascript:void(0);" data-toggle="scroll-to" data-target="#review-wrapper">
+
+                    <div class="text-warning d-inline">
+                                <i class="fa fa-fw fa-star"></i>
+                                <i class="fa fa-fw fa-star"></i>
+                                <i class="fa fa-fw fa-star"></i>
+                                <i class="fa fa-fw fa-star"></i>
+                                <i class="fa fa-fw fa-star"></i>
+                    </div>
+                    <div class="d-inline">
+                        <span class="font-size-h5 font-w600 text-white"> 5.0</span> (<strong class="text-white">22</strong> đánh giá)
+                    </div>
+                </a>
+                <div class="text-white-op mb-20">
+                    <span class="mr-15">
+                        Tạo bởi <a class="link-effect font-w600" href="https://www.howkteam.vn/users/12e3dcb4-2cdf-4696-8ca2-977289a74ada">Trần Thành Vi Thanh</a>
+                    </span>
+                    <span class="mr-15 mt-5 d-block d-md-inline">
+                        Cập nhật lần cuối <span class="format-time font-w600 text-white" title="2020-07-23 11:28:55">18 ngày trước</span>
+                    </span>
+                    <span class="mr-15 mt-5 d-block d-md-inline">
+                        <i class="far fa-fw fa-eye mr-5"></i><span class="font-w600 text-white">99.874</span> lượt xem
+                    </span>
+                    <span class="mr-15 mt-5 d-block d-md-inline">
+                        <i class="far fa-fw fa-comment mr-5"></i><span class="font-w600 text-white">17</span> bình luận
+                    </span>
+                </div>
+                <a class="btn btn-primary btn-noborder btnQuickViewLecture" href="javascript:void(0);" data-src="https://www.youtube.com/embed/yrH7Qe8FXqE?autoplay=1" data-action="/learn/quickviewlecturecontent/53" data-id="53" data-courseid="1">
+                    Học nhanh
+                    <i class="fas fa-arrow-right fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9004889619110409" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1123px;background-color:transparent;"><ins id="aswift_2_anchor" style="display: block; border: none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1123px; background-color: transparent; overflow: visible;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:1123px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1123" height="280" frameborder="0" src="./Kiểu dữ liệu trong C# _ How Kteam_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!3" data-google-query-id="COWgjr7ikOsCFflmFQgdJ1YK3w" data-load-complete="true"></iframe></ins></ins></ins></div>
+<!-- END Hero -->
+
+
+<div class="fixed-social-left d-none d-xl-block">
+    
+
+    <button class="btnShareFb btn btn-primary btn-noborder btn-circle d-block mb-5 js-tooltip-enabled" data-url="https://www.howkteam.vn/Learn/Lecture/53" data-title="Kiểu dữ liệu trong C#" data-description="Ở bài Biến trong C# chúng ta đã tìm hiểu về biến và có một thành phần không thể thiếu khi khai báo biến – Đó là kiểu dữ liệu. Bài học hôm nay chúng ta sẽ cùng tìm hiểu chi tiết về Kiểu dữ liệu trong C#." data-image="https://f.howkteam.vn/Upload/cke/images/1_LOGO%20SHOW%20WEB/1_C%23_AutoC%23/1_C%23%20C%C4%83n%20b%E1%BA%A3n/C%23%20basics%20(5).jpg" data-toggle="tooltip" data-placement="right" data-original-title="Chia sẻ lên facebook">
+        <i class="fab fa-facebook-f fa-fw"></i>
+    </button>
+    
+
+    
+    <span class="bookmark-desktop">
+    <div class="btn btn-circle btn-secondary text-secondary bookmark- js-tooltip-enabled" onclick="Kteam.saveBookmark(&#39;&#39;, &#39;0&#39;, &#39;/bookmark/create&#39;); return false;" data-toggle="tooltip" data-placement="right" data-original-title="Lưu bài viết">
+        <i class="far fa-bookmark fa-fw"></i>
+    </div>
+
+    </span>
+</div>
+
+<div class="fixed-nav-lecture d-none d-xl-block">
+    <a class="btn btn-primary btn-noborder btn-circle btn-prevLecture js-tooltip-enabled" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/bien-trong-c-52" data-toggle="tooltip" data-placement="right" data-original-title="Bài trước">
+        <i class="fa fa-arrow-left fa-fw"></i>
+    </a>
+    <a class="btn btn-primary btn-noborder btn-circle btn-nextLecture js-tooltip-enabled" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/toan-tu-trong-c-54" data-toggle="tooltip" data-placement="left" data-original-title="Bài sau">
+        <i class="fa fa-arrow-right fa-fw"></i>
+    </a>
+</div>
+
+<div class="fixed-nav-page-wrapper d-none d-xl-block">
+    <span data-toggle="tooltip" data-placement="right" data-original-title="Hỏi đáp" class="js-tooltip-enabled">
+        <a class="btn btn-primary btn-noborder btn-circle d-block mb-5" href="javascript:void(0)" data-toggle="scroll-to" data-target="#comment-wrapper" data-speed="fast">
+            <i class="fas fa-fw fa-question"></i>
+        </a>
+    </span>
+        <span data-toggle="tooltip" data-placement="right" data-original-title="Tải tài liệu" class="js-tooltip-enabled">
+            <a class="btn btn-danger btn-noborder btn-circle d-block mb-5" href="https://www.howkteam.vn/redirect?Id=%2fVFWH6SyqU3P%2f6cySeX4JdfJ4aEKKczoUjjbHwNVFxP2P1SDdfm2kxAoxbl6Ik9y%2bJ2DBr%2bJG0nLMmtqDlIs%2fg%3d%3d" target="_blank">
+                <i class="fas fa-fw fa-file-pdf"></i>
+            </a>
+        </span>
+        </div>
+
+<!-- Courses -->
+<div class="content" style="height: auto !important;">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb bg-white push">
+        <a class="breadcrumb-item" href="https://www.howkteam.vn/"><i class="fas fa-home"></i></a>
+        <a class="breadcrumb-item" href="https://www.howkteam.vn/learn">Khóa học</a>
+        <a class="breadcrumb-item" href="https://www.howkteam.vn/learn/lap-trinh-7">Lập trình</a>
+        <a class="breadcrumb-item" href="https://www.howkteam.vn/learn/lap-trinh/lap-trinh-c-net-7-5">Lập trình C# .Net</a>
+        <a class="breadcrumb-item" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban-1">Khóa học lập trình C# căn bản</a>
+        <span class="breadcrumb-item active">Kiểu dữ liệu trong C#</span>
+    </nav>
+    <!-- END Breadcrumb -->
+
+    <div class="row row-deck">
+        <div class="col-lg-8">
+            <div class="block block-rounded block-fx-shadow">
+                <div class="auto-resizable-iframe"><iframe class="width-changed" src="./Kiểu dữ liệu trong C# _ How Kteam_files/saved_resource.html"></iframe>
+                    <div>
+                            <iframe oncontextmenu="return false" id="ytplayer" height="538" type="text/html" src="./Kiểu dữ liệu trong C# _ How Kteam_files/yrH7Qe8FXqE.html" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <!-- Course Info -->
+            <div class="block block-rounded block-fx-shadow">
+                <div class="block-header block-header-default bg-gd-primary">
+                    <h3 class="block-title font-w600 text-white">
+                        <i class="fa fa-fw fa-list"></i>
+                        Danh sách bài học
+                    </h3>
+                    <div class="block-options d-lg-none">
+                        <button type="button" class="btn-block-option text-white" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+                <div class="block-content p-0">
+                    <div class="asyncPartial" data-url="/learn/lecturelist?courseId=1&amp;activeId=53">
+
+
+<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 307.797px;"><div id="lectures-list" class="block-content pb-20" data-height="0px" data-toggle="slimscroll" data-always-visible="true" style="overflow: hidden; width: auto; height: 307.797px;">
+    <div class="list-group">
+        <div class="input-group mb-2">
+            <input type="text" id="input-search-lecture" class="form-control" placeholder="Tìm bài học...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+                <a id="lecture-1" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/c-la-gi-13">
+                    <span class="font-w600">01. </span>
+                    C# là gì?
+                </a>
+                <a id="lecture-2" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/cau-truc-lenh-co-ban-trong-c-console-application-15">
+                    <span class="font-w600">02. </span>
+                    Cấu trúc lệnh cơ bản trong C# Console Application
+                </a>
+                <a id="lecture-3" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/nhap-xuat-co-ban-trong-c-console-application-14">
+                    <span class="font-w600">03. </span>
+                    Nhập xuất cơ bản trong C# Console Application
+                </a>
+                <a id="lecture-4" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/bien-trong-c-52">
+                    <span class="font-w600">04. </span>
+                    Biến trong C#
+                </a>
+                <a id="lecture-5" class="list-group-item list-group-item-action border-0 active" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/kieu-du-lieu-trong-c-53">
+                    <span class="font-w600">05. </span>
+                    Kiểu dữ liệu trong C#
+                </a>
+                <a id="lecture-6" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/toan-tu-trong-c-54">
+                    <span class="font-w600">06. </span>
+                    Toán tử trong C#
+                </a>
+                <a id="lecture-7" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/hang-trong-c-55">
+                    <span class="font-w600">07. </span>
+                    Hằng trong C#
+                </a>
+                <a id="lecture-8" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/ep-kieu-trong-c-56">
+                    <span class="font-w600">08. </span>
+                    Ép kiểu trong C#
+                </a>
+                <a id="lecture-9" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/cau-truc-re-nhanh-if-else-trong-c-57">
+                    <span class="font-w600">09. </span>
+                    Cấu trúc rẽ nhánh If else trong C#
+                </a>
+                <a id="lecture-10" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/cau-truc-re-nhanh-switch-case-trong-c-58">
+                    <span class="font-w600">10. </span>
+                    Cấu trúc rẽ nhánh Switch case trong C#
+                </a>
+                <a id="lecture-11" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/kieu-du-lieu-object-trong-c-86">
+                    <span class="font-w600">11. </span>
+                    Kiểu dữ liệu Object trong C#
+                </a>
+                <a id="lecture-12" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/tu-khoa-dynamic-trong-c-87">
+                    <span class="font-w600">12. </span>
+                    Từ khóa Dynamic trong C#
+                </a>
+                <a id="lecture-13" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/gioi-thieu-cau-truc-vong-lap-trong-c-88">
+                    <span class="font-w600">13. </span>
+                    Giới thiệu cấu trúc vòng lặp trong C#.
+                </a>
+                <a id="lecture-14" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/cau-truc-lap-goto-trong-c-89">
+                    <span class="font-w600">14. </span>
+                    Cấu trúc lặp Goto trong C#.
+                </a>
+                <a id="lecture-15" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/vong-lap-for-trong-c-90">
+                    <span class="font-w600">15. </span>
+                    Vòng lặp For trong C#.
+                </a>
+                <a id="lecture-16" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/vong-lap-while-trong-c-91">
+                    <span class="font-w600">16. </span>
+                    Vòng lặp While trong C#.
+                </a>
+                <a id="lecture-17" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/vong-lap-do-while-trong-c-92">
+                    <span class="font-w600">17. </span>
+                    Vòng lặp Do While trong C#.
+                </a>
+                <a id="lecture-18" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/cau-truc-cua-ham-co-ban-trong-c-93">
+                    <span class="font-w600">18. </span>
+                    Cấu trúc của hàm cơ bản trong C#
+                </a>
+                <a id="lecture-19" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/bien-toan-cuc-va-bien-cuc-bo-trong-c-95">
+                    <span class="font-w600">19. </span>
+                    Biến toàn cục và biến cục bộ trong C#
+                </a>
+                <a id="lecture-20" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/tu-khoa-ref-va-out-trong-c-96">
+                    <span class="font-w600">20. </span>
+                    Từ khóa ref và out trong C#
+                </a>
+                <a id="lecture-21" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/mang-1-chieu-trong-c-97">
+                    <span class="font-w600">21. </span>
+                    Mảng 1 chiều trong C#
+                </a>
+                <a id="lecture-22" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/mang-2-chieu-trong-c-108">
+                    <span class="font-w600">22. </span>
+                    Mảng 2 chiều trong C#
+                </a>
+                <a id="lecture-23" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/mang-nhieu-chieu-trong-lap-trinh-c-co-ban-1136">
+                    <span class="font-w600">23. </span>
+                    Mảng nhiều chiều trong lập trình C# cơ bản
+                </a>
+                <a id="lecture-24" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/vong-lap-foreach-trong-lap-trinh-c-co-ban-1193">
+                    <span class="font-w600">24. </span>
+                    Vòng lặp foreach trong lập trình C# cơ bản
+                </a>
+                <a id="lecture-25" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/lop-string-trong-lap-trinh-c-can-ban-1194">
+                    <span class="font-w600">25. </span>
+                    Lớp String trong Lập trình C# căn bản
+                </a>
+                <a id="lecture-26" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/struct-trong-lap-trinh-c-can-ban-1221">
+                    <span class="font-w600">26. </span>
+                    Struct trong lập trình C# căn bản
+                </a>
+                <a id="lecture-27" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/enum-trong-lap-trinh-c-1367">
+                    <span class="font-w600">27. </span>
+                    Enum trong lập trình C# 
+                </a>
+                <a id="lecture-28" class="list-group-item list-group-item-action border-0 " href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/regular-expression-trong-c-1427">
+                    <span class="font-w600">28. </span>
+                    Regular Expression trong C#
+                </a>
+
+    </div>
+</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 67.8646px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+
+            <input type="hidden" id="nextLecture" value="/course/khoa-hoc-lap-trinh-c-can-ban/toan-tu-trong-c-54">
+            <input type="hidden" id="prevLecture" value="/course/khoa-hoc-lap-trinh-c-can-ban/bien-trong-c-52">
+
+<script>
+    $('#lectures-list').slimScroll({
+        height: ($(".auto-resizable-iframe").height() - 56) + "px"
+    });
+
+    $('.auto-resizable-iframe').on('widthChanged', function () {
+        var height = $(this).height();
+        $('#lectures-list').slimScroll({
+            height: (height - 56) + "px"
+        });
+    });
+
+    Kteam.filterHtml("#input-search-lecture", "#lectures-list a");
+
+    // load lecture button
+    if ($("#nextLecture").length) {
+        $(".btn-nextLecture").attr("href", $("#nextLecture").val());
+    } else {
+        $(".btn-nextLecture").addClass("disabled");
+    }
+    if ($("#prevLecture").length) {
+        $(".btn-prevLecture").attr("href", $("#prevLecture").val());
+    } else {
+        $(".btn-prevLecture").addClass("disabled");
+    }
+    if ($(".btn-startLecture").length) {
+        $(".btn-startLecture").attr("href", $("#lecture-1").attr("href"));
+    }
+</script></div>
+                </div>
+            </div>
+            <!-- END Course Info -->
+        </div>
+    </div>
+
+    <div id="focus-learn" style="height: auto !important;" class="focus-learn">
+        <div class="focus-learn-header" style="display: none;">
+            <div class="mr-15">
+                <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="w-100">
+                <h2 class="mb-10 h4 text-white">Kiểu dữ liệu trong C#</h2>
+                <div class="text-white-op font-size-sm">
+                    <span class="mr-15">
+                        <i class="fa fa-book fa-fw mr-5"></i><a class="font-weight-bold" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban-1">Khóa học lập trình C# căn bản</a>
+                    </span>
+                    <span class="mr-15">
+                        Tạo bởi <a class="font-w600" href="https://www.howkteam.vn/users/12e3dcb4-2cdf-4696-8ca2-977289a74ada">Trần Thành Vi Thanh</a>
+                    </span>
+                    <span class="mr-15 mt-5">
+                        <i class="far fa-fw fa-eye mr-5"></i><span class="text-white">99.874</span>
+                    </span>
+                    <span class="mr-15 mt-5">
+                        <i class="far fa-fw fa-comment mr-5"></i><span class="text-white">17</span>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <a class="btn btn-sm btn-primary btn-noborder btnQuickViewLecture" href="javascript:void(0);" data-src="https://www.youtube.com/embed/yrH7Qe8FXqE?autoplay=1" data-action="/learn/quickviewlecturecontent/53" data-id="53" data-courseid="1">
+                    Học nhanh
+                    <i class="fas fa-arrow-right fa-fw"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="height: auto !important;">
+            <div class="col-xl-12" style="height: auto !important; min-height: 0px !important;">
+                <div class="block block-rounded block-fx-shadow" id="content-post-wrapper" style="height: auto !important;">
+                    <div class="block-content block-content-full border-b clearfix">
+                        <h2 class="m-0 font-size-h2">
+                            Kiểu dữ liệu trong C#
+                        </h2>
+                        <div class="mt-10 d-block d-xl-none">
+                            
+                            <button class="btnShareFb btn btn-primary btn-noborder btn-circle mr-5 js-tooltip-enabled" data-url="https://www.howkteam.vn/Learn/Lecture/53" data-title="Kiểu dữ liệu trong C#" data-description="Ở bài Biến trong C# chúng ta đã tìm hiểu về biến và có một thành phần không thể thiếu khi khai báo biến – Đó là kiểu dữ liệu. Bài học hôm nay chúng ta sẽ cùng tìm hiểu chi tiết về Kiểu dữ liệu trong C#." data-image="https://f.howkteam.vn/Upload/cke/images/1_LOGO%20SHOW%20WEB/1_C%23_AutoC%23/1_C%23%20C%C4%83n%20b%E1%BA%A3n/C%23%20basics%20(5).jpg" data-toggle="tooltip" data-placement="right" data-original-title="Chia sẻ lên facebook">
+                                <i class="fab fa-facebook-f fa-fw"></i>
+                            </button>
+                            
+                            <span class="bookmark-mobile">
+    <div class="btn btn-circle btn-secondary text-secondary bookmark- js-tooltip-enabled" onclick="Kteam.saveBookmark(&#39;&#39;, &#39;0&#39;, &#39;/bookmark/create&#39;); return false;" data-toggle="tooltip" data-placement="right" data-original-title="Lưu bài viết">
+        <i class="far fa-bookmark fa-fw"></i>
+    </div>
+
+    </span>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full" style="height: auto !important;">
+                        <div class="row" style="height: auto !important;">
+                            <div class="col-lg-9" style="height: auto !important; min-height: 0px !important;">
+                                <div class="d-block d-lg-none">
+                                    <p class="font-size-h5 font-w600 mb-5">
+                                        Nội dung bài viết
+                                        <a class="btn btn-sm btn-link btnQuickViewLecture" href="javascript:void(0);" data-src="https://www.youtube.com/embed/yrH7Qe8FXqE?autoplay=1" data-action="/learn/quickviewlecturecontent/53" data-id="53" data-courseid="1">
+                                            Học nhanh
+                                            <i class="fas fa-arrow-right fa-fw"></i>
+                                        </a>
+                                    </p>
+                                    <div class="document-outline"><ul class="docout-root-wrap"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-0" class="">Dẫn nhập</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-1" class="">Nội dung</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-2" class="">Kiểu dữ liệu là gì? Tại sao phải có kiểu dữ liệu?</a><ul class="docout-child-wrap docout-child-wrap-1"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-3" class="">Tại sao phải có kiểu dữ liệu?</a></li></ul></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-4" class="">Phân loại kiểu dữ liệu và ý nghĩa của từng kiểu dữ liệu</a><ul class="docout-child-wrap docout-child-wrap-1"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-5" class="">Kiểu dữ liệu giá trị (value):</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-6" class="active">Kiểu dữ liệu tham chiếu (reference):</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-7">Một số lưu ý khi sử dụng các kiểu dữ liệu trên:</a></li></ul></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-8">Ví dụ chương trình sử dụng kiểu dữ liệu</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-9">Kết luận</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-10">Tải xuống</a><ul class="docout-child-wrap docout-child-wrap-1"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-11">Tài liệu</a></li></ul></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-12">Thảo luận</a></li></ul>
+
+                                    </div>
+                                    <div class="mb-15">
+                                        <div class="btn-group w-100">
+                                            <a class="btn btn-secondary btn-prevLecture w-50" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/bien-trong-c-52">
+                                                <i class="fa fa-arrow-left text-primary fa-fw"></i>
+                                                <span>Bài trước</span>
+                                            </a>
+                                            <a class="btn btn-secondary btn-nextLecture w-50" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/toan-tu-trong-c-54">
+                                                <span>Bài sau</span>
+                                                <i class="fa fa-arrow-right text-primary fa-fw"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="content-post" class="content-post" style="height: auto !important; min-height: 520px;">
+                                    
+<div class="my-15">
+    <ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-9004889619110409" data-ad-slot="9044410578" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 704px; background-color: transparent;"><ins id="aswift_0_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 704px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:704px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="704" height="280" frameborder="0" src="./Kiểu dữ liệu trong C# _ How Kteam_files/ads(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CIra_L3ikOsCFcGpaAodCasAYw" data-load-complete="true"></iframe></ins></ins></ins>
+    <script>
+        //window.addEventListener('load', function () {
+        //    (adsbygoogle = window.adsbygoogle || []).push({});
+        //});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+                                    <h2 id="docout-0">Dẫn nhập</h2>
+
+<p>Ở bài <a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0rZRqPOVzQSxG20E6RGIOYFW%2fcTAzGeIqXw0q0jvaA%2beDnsHZapblQXaOVDtPxOtpg%3d%3d" target="_blank">BIẾN TRONG C#</a>&nbsp;chúng ta đã tìm hiểu về biến và có một thành phần không thể thiếu khi khai báo biến – Đó là kiểu dữ liệu. Bài học hôm nay chúng ta sẽ cùng tìm hiểu chi tiết về <span style="color:#ff6600"><strong>KIỂU DỮ LIỆU TRONG&nbsp;C#</strong></span>.</p>
+
+<hr>
+<h2 id="docout-1">Nội dung</h2>
+
+<p>Để đọc hiểu bài này tốt nhất các bạn nên có kiến thức cơ bản về các phần:</p>
+
+<ul>
+	<li><a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0rZRqPOVzQSxG20E6RGIOYGYnRvCixMWsl9L%2f6WjbU7bm3J%2fiG64OvdctMBvzVHhSyf7IlaZRXxljlJs57u8968uR23sNFiJYngwyqwbCjik" target="_blank">Cấu trúc lệnh của C# viết trên nền Console Application</a>.</li>
+	<li><a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0rZRqPOVzQSxG20E6RGIOYHlhS37Nu%2bCFxpxE3Qp047%2bQ2wlcpT7QujHWogpxeFZh9a1m%2boBzY%2buYWsyW1HsXHw2U6ExF%2bJUOHaEuQRWZHQq" target="_blank">Cấu trúc nhập xuất của C# trên nền Console Application</a>.</li>
+	<li><a href="https://www.howkteam.vn/redirect?Id=lL4WVGKq6qr9Sfw1hML2PYLc2yytFxEk3Rpv9AihQMsO1wrqOEtNviO6CkZbnB%2bB" target="_blank">Biến trong C#</a><a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0rZRqPOVzQSxG20E6RGIOYFW%2fcTAzGeIqXw0q0jvaA%2beDnsHZapblQXaOVDtPxOtpg%3d%3d" target="_blank">.</a></li>
+</ul>
+
+<p>&nbsp;Trong bài học này, chúng ta sẽ cùng tìm hiểu các vấn đề:</p>
+
+<ul>
+	<li>Kiểu dữ liệu là gì? Tại sao phải có kiểu dữ liệu?</li>
+	<li>Phân loại kiểu dữ liệu và ý nghĩa của từng kiểu dữ liệu.</li>
+	<li>Ví dụ chương trình sử dụng một số kiểu dữ liệu.</li>
+</ul>
+
+<hr>
+<h2 id="docout-2">Kiểu dữ liệu là gì? Tại sao phải có kiểu dữ liệu?</h2>
+
+<p>Kiểu dữ liệu được định nghĩa như sau:</p>
+
+<ul>
+	<li>Là tập hợp các nhóm dữ liệu có cùng đặc tính, cách lưu trữ và thao tác xử lý trên trường dữ liệu đó.</li>
+	<li>Là một tín hiệu để trình biên dịch nhận biết kích thước của một biến (ví dụ như int là 4 bytes, sẽ được trình bày ở phần sau) và khả năng của nó (ví dụ biến kiểu int chỉ có thể chứa được các số nguyên).</li>
+	<li>Là thành phần cốt lõi của một ngôn ngữ lập trình.</li>
+</ul>
+
+<h3 id="docout-3">Tại sao phải có kiểu dữ liệu?</h3>
+
+<ul>
+	<li>Như trong định nghĩa đã trình bày, phải có kiểu dữ liệu để nhận biết kích thước và khả năng của một biến.</li>
+	<li>Nhằm mục đích phân loại dữ liệu. Nếu như không có kiểu dữ liệu ta rất khó xử lý vì không biết biến này kiểu chuỗi hay kiểu số nguyên hay kiểu số thực, . . .</li>
+</ul>
+
+<hr>
+<h2 id="docout-4">Phân loại kiểu dữ liệu và ý nghĩa của từng kiểu dữ liệu</h2>
+
+<p>Trong C#, kiểu dữ liệu được chia thành 2 tập hợp kiểu dữ liệu chính:</p>
+
+<ul>
+	<li>Kiểu dữ liệu dựng sẵn (built - in) mà ngôn ngữ cung cấp.</li>
+	<li>Kiểu dữ liệu do người dùng định nghĩa (user - defined).</li>
+</ul>
+
+<p>Mỗi tập hợp kiểu dữ liệu trên lại phân thành 2 loại:</p>
+
+<h3 id="docout-5">Kiểu dữ liệu giá trị (value):</h3>
+
+<p>Một biến khi khai báo kiểu dữ liệu giá trị thì vùng nhớ của biến đó sẽ chứa giá trị của dữ liệu và được lưu trữ trong bộ nhớ <span style="color:#b22222"><strong>Stack</strong></span>.</p>
+
+<p>Một số kiểu dữ liệu thuộc kiểu giá trị: bool, byte, char, decimal, double, enum, float, int, long, sbyte, short, struct, uint, ulong, ushort. (các kiểu dữ liệu này sẽ được trình bày ngay sau đây)</p>
+
+<h3 id="docout-6">Kiểu dữ liệu tham chiếu (reference):</h3>
+
+<p>Một biến khi khai báo kiểu dữ liệu tham chiếu thì vùng nhớ của biến đó chỉ chứa địa chỉ của đối tượng dữ liệu và lưu trong bộ nhớ <strong><span style="color:#b22222">Stack</span></strong>.</p>
+
+<p>Đối tượng dữ liệu thực sự được lưu trong bộ nhớ <span style="color:#b22222"><strong>Heap</strong></span>.</p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: none; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9004889619110409" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 0px;"><ins id="aswift_4_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 704px; background-color: transparent;"><ins id="aswift_4_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 704px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:704px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="704" height="280" frameborder="0" src="./Kiểu dữ liệu trong C# _ How Kteam_files/ads(2).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!4" data-google-query-id="CIOwpr7ikOsCFQdjFQgdDA0Ojw" data-load-complete="true"></iframe></ins></ins></ins></div>
+
+<p>Một số kiểu dữ liệu thuộc kiểu tham chiếu:<span style="color:#0033ff"> object</span>,<span style="color:#0033ff"> dynamic</span>, <span style="color:#0033ff">string </span>và tất cả các kiểu dữ liệu do người dùng định nghĩa. (sẽ được trình bày ở những bài sau).</p>
+
+<p style="text-align:center"><img alt="Kiểu dữ liệu trong C#,C# cơ bản, tự học C#, Kteam, Howkteam,Kiểu dữ liệu dựng sẵn,Kiểu dữ liệu do người dùng định nghĩa,Kiểu dữ liệu tham chiếu,reference" src="./Kiểu dữ liệu trong C# _ How Kteam_files/1_Kiểu dữ liệu trong C#_Howkteam_com.png" style="height:545px; margin-bottom:10px; margin-top:10px; width:574px"></p>
+
+<p>Hình ảnh trên minh họa cho <span style="color:#ff0000"><strong>kiểu dữ liệu giá trị </strong></span>và <span style="color:#6600cc"><strong>kiểu dữ liệu tham chiếu</strong></span>: (đây chỉ là hình ảnh mang tính chất minh họa cho các bạn hiểu về cách lưu trữ của )</p>
+
+<ul>
+	<li>Trong hình biến <strong>a</strong> được khai báo là kiểu int nên vùng nhớ được lưu trên <span style="color:#b22222"><strong>Stack </strong></span>và lưu giá trị 10.</li>
+	<li>Biến <strong>b</strong> được khai báo là kiểu string nên vùng nhớ trên <span style="color:#b22222"> <strong>Stack </strong></span>chỉ lưu địa chỉ đối tượng dữ liệu (<span style="color:#ff0000">0xccc</span>) còn đối tượng dữ liệu thực sự được lưu trên <span style="color:#b22222"><strong>Heap </strong></span>(ô nhớ có địa chỉ <span style="color:#ff0000"> 0xccc</span> có giá trị là “<span style="color:#b22222">Kteam</span>”).</li>
+</ul>
+
+<hr>
+<p>Bộ nhớ <span style="color:#b22222"><strong>Stack </strong></span>và bộ nhớ <span style="color:#b22222"> <strong>Heap</strong></span>: Cả hai đều là bộ nhớ trên RAM nhưng cách tổ chức, quản lý dữ liệu cũng như sử dụng thì rất khác nhau:</p>
+
+<h4>Stack:</h4>
+
+<ul>
+	<li>Vùng nhớ được cấp phát khi chương trình biên dịch.</li>
+	<li>Được sử dụng cho việc thực thi thread (khái niệm về thread sẽ được trình bày trong bài <a href="https://www.howkteam.vn/redirect?Id=CDPvobsj8EgqSWOjQulkj7KLp%2fXKC0Hu8VwCLICnWtQ7ETwTu7CirW%2bhsSye3P82jKRy2%2fjRXYxfaYgD6A86wqXsAWpWX2iT8wbN44qojpMks%2b6rMtOEEkXmgY%2bqv%2b1HJ9V0zInU923mZmUPg9qjTw%3d%3d" target="_blank">THREAD TRONG C#</a> ), khi gọi hàm (khái niệm về hàm sẽ được trình bày trong bài <a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0lthogs3xmFNd%2fmA%2beIi3HpefwGKmQoUyVOvzTYLwXwPFagHBQLWvFb%2feOJ6eoualVCqox5kJrTVoIcHe3GhjUVq%2fXiBziny%2b%2bjN2MluidbV" target="_blank"> CẤU TRÚC HÀM CƠ BẢN&nbsp;TRONG C#</a>), các biến cục bộ kiểu giá trị và<strong> tự động giải phóng</strong> khi không còn sử dụng nữa.</li>
+	<li>Kích thước vùng nhớ Stack là cố định và chúng ta không thể thay đổi.</li>
+	<li>Khi vùng nhớ này không còn đủ dùng thì sẽ gây ra hiện tượng <strong>tràn bộ nhớ</strong> (stack overflow). Hiện tượng này xảy ra khi nhiều hàm lồng vào nhau hoặc gọi đệ quy nhiều lần dẫn đến không đủ vùng nhớ (khái niệm đệ quy sẽ được trình bày trong bài <a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0lthogs3xmFNd%2fmA%2beIi3HpefwGKmQoUyVOvzTYLwXwPFagHBQLWvFb%2feOJ6eoualVCqox5kJrTVoIcHe3GhjUVq%2fXiBziny%2b%2bjN2MluidbV" target="_blank"> CẤU TRÚC HÀM CƠ BẢN&nbsp;TRONG C#</a>).</li>
+</ul>
+
+<h4>Heap:</h4>
+
+<ul>
+	<li>Vùng nhớ được cấp phát khi chạy chương trình.</li>
+	<li>Vùng nhớ Heap được dùng cho cấp phát bộ nhớ động (cấp phát thông qua toán tử new, sẽ được trình bày trong bài <a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0seoCJKPkLkdlVBBytznyWlqOehbsGiBICPMlfyXyinViN5oZOQmQBJEjyWluDLjtsbD3GO4AtUFXlvUEn%2bnMf37t7HqlOk7l6KKJzCRBZ0y" target="_blank"> TOÁN TỬ TRONG C#</a>)</li>
+	<li>Bình thường vùng nhớ trong Heap do người dùng tự giải phóng nhưng trong C# điều này được hỗ trợ mạnh mẽ bởi bộ tự động thu gom rác (Garbage Collection). Vì thế việc giải phóng vùng nhớ sẽ được thực hiện tự động.</li>
+	<li>Kích thước vùng nhớ Heap có thể thay đổi được. Khi không đủ vùng nhớ để cấp phát thì hệ điều hành sẽ tự động tăng kích thước vùng nhớ Heap lên.</li>
+</ul>
+
+<p>Trong phạm vi bài học hôm nay chúng ta chỉ tìm hiểu qua các kiểu dữ liệu dựng sẵn cơ bản những kiểu dữ liệu còn lại chúng ta sẽ tìm hiểu trong các bài học sau. Ý nghĩa của một số kiểu dữ liệu cơ bản:</p>
+
+<table border="1" cellspacing="0" class="Table table table-sm table-bordered" style="border-collapse:collapse; border:solid windowtext 1.0pt; margin-left:12px">
+	<tbody>
+		<tr>
+			<td style="height:44.95pt; width:99.9pt">
+			<p style="text-align:center"><strong>Nhóm</strong></p>
+			</td>
+			<td style="height:44.95pt; width:81.0pt">
+			<p style="text-align:center"><strong>Kiểu dữ liệu</strong></p>
+			</td>
+			<td style="height:44.95pt; width:85.5pt">
+			<p style="text-align:center"><strong>Kích thước </strong></p>
+
+			<p style="text-align:center"><strong>(bytes)</strong></p>
+			</td>
+			<td style="height:44.95pt; width:217.45pt">
+			<p style="text-align:center"><strong>Ý nghĩa</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="8" style="width:99.9pt">
+			<p style="text-align:center">Kiểu số nguyên</p>
+			</td>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">byte</span></p>
+			</td>
+			<td>
+			<p style="text-align:center">1</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên dương<strong> không dấu</strong> có giá trị&nbsp;từ <strong>0</strong> đến <strong>255</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">sbyte</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">1</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên có dấu có giá trị từ<strong> -128 </strong>đến <strong>127</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center">&nbsp;<span style="color:#0033ff">short</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">2</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên có dấu có giá trị từ<strong> -32,768 </strong>đến <strong>32,767</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">ushort</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">2</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên <strong>không dấu </strong>có giá trị từ <strong>0</strong> đến <strong>65,535</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">int</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">4</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên có dấu có giá trị từ <strong>-2,147,483,647</strong> đến&nbsp;<strong>2,147,483,647</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">uint</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">4</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên<strong> không dấu </strong>có giá trị từ <strong>0</strong> đến <strong>4,294,967,295</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">long</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">8</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên có dấu có giá trị từ <strong>-9,223,370,036,854,775,808</strong> đến <strong>9,223,370,036,854,775,807</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">ulong</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">8</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Số nguyên <strong>không dấu </strong>có giá trị từ <strong>0 </strong>đến <strong>18,446,744,073,709,551,615</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top; width:99.9pt">
+			<p style="text-align:center">Kiểu ký tự</p>
+			</td>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">char</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">2</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Chứa một ký tự Unicode</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top; width:99.9pt">
+			<p style="text-align:center">Kiểu logic</p>
+			</td>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">bool</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">1</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Chứa 1 trong 2 giá trị logic là <strong>true </strong>hoặc <strong>false</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3" style="width:99.9pt">
+			<p style="text-align:center">Kiểu số thực</p>
+			</td>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">float</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">4</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Kiểu số thực dấu chấm động có giá trị dao động</p>
+
+			<p>từ <strong>3.4E – 38 </strong>đến <strong>3.4E + 38</strong>, với 7 chữ số có nghĩa</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">double</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">8</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Kiểu số thực dấu chấm động có giá trị dao động từ<strong> 1.7E – 308 </strong>đến<strong> 1.7E + 308</strong>, với 15, 16 chữ số có nghĩa</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:81.0pt">
+			<p style="text-align:center"><span style="color:#0033ff">decimal</span></p>
+			</td>
+			<td style="width:85.5pt">
+			<p style="text-align:center">8</p>
+			</td>
+			<td style="width:217.45pt">
+			<p>Có độ chính xác đến 28 con số và giá trị thập phân, được dùng trong tính toán tài chính</p>
+			</td>
+		</tr>
+	</tbody>
+</table><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9004889619110409" data-adsbygoogle-status="done" style="display: block; margin: 14px auto; background-color: transparent; height: 0px;"><ins id="aswift_6_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 704px; background-color: transparent;"><ins id="aswift_6_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 704px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;border:0;width:704px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="704" height="280" frameborder="0" src="./Kiểu dữ liệu trong C# _ How Kteam_files/ads(3).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!6" data-google-query-id="COCh67_ikOsCFdhjFQgduG4PtQ" data-load-complete="true"></iframe></ins></ins></ins></div>
+
+<ul>
+	<li>Khác với những kiểu dữ liệu trên, <span style="color:blue">string</span> là kiểu dữ liệu tham chiếu và dùng để lưu chuỗi ký tự.</li>
+</ul>
+
+<hr>
+<h3 id="docout-7">Một số lưu ý khi sử dụng các kiểu dữ liệu trên:</h3>
+
+<p>Khác với những kiểu dữ liệu trên, <span style="color:#0033ff">string </span>là kiểu dữ liệu tham chiếu và dùng để lưu chuỗi ký tự.&nbsp;Trong phạm vi bài học hôm nay chúng ta chỉ tìm hiểu qua các kiểu dữ liệu dựng sẵn cơ bản những kiểu dữ liệu còn lại chúng ta sẽ tìm hiểu trong các bài học sau.</p>
+
+<p>Ý nghĩa của một số kiểu dữ liệu cơ bản:</p>
+
+<ul>
+	<li>Kiểu dữ liệu có miền giá trị lớn hơn sẽ chứa được kiểu dữ liệu có miền giá trị nhỏ hơn. Như vậy biến kiểu dữ liệu nhỏ hơn có thể gán giá trị qua biến kiểu dữ liệu lớn hơn (sẽ được trình bày trong phần tiếp theo).</li>
+	<li>Giá trị của kiểu <span style="color:#0000ff">char </span>sẽ nằm trong dấu <span style="color:#b22222"> <strong>‘ ’</strong></span> (nháy đơn).</li>
+	<li>Giá trị của kiểu <span style="color:#0000ff">string </span>sẽ nằm trong dấu <span style="color:#b22222"> <strong>“ ” </strong></span>(nháy kép).</li>
+	<li>Giá trị của biến kiểu <span style="color:#0000ff">float </span>phải có chữ <strong> <span style="color:#b22222">F</span></strong> hoặc <span style="color:#b22222"><strong>f </strong></span>làm hậu tố.</li>
+	<li>Giá trị của biến kiểu <span style="color:#0000ff">decimal </span>phải có chữ <span style="color:#b22222"> <strong>m </strong></span>hoặc <span style="color:#b22222"><strong>M </strong></span>làm hậu tố.</li>
+	<li>Trừ kiểu string, tất cả kiểu dữ liệu trên đều <span style="color:#ff0000">không được có giá trị null</span>:
+	<ul>
+		<li>Null là giá trị rỗng, không tham chiếu đến vùng nhớ nào.</li>
+		<li>Để có thể gán giá trị null cho biến thì ta thêm ký tự ? vào sau tên kiểu dữ liệu là được. Ví dụ: int? hay bool? . . .</li>
+	</ul>
+	</li>
+</ul>
+
+<hr>
+<h2 id="docout-8">Ví dụ chương trình sử dụng kiểu dữ liệu</h2>
+
+<p><span style="color:#b22222"><strong>Ví dụ 1: </strong></span>Khai báo biến với các kiểu dữ liệu đã học.</p>
+
+<pre><div class="headcode"><div class="tabscode"></div><div class="formatright"><div class="collapse-expand" data-value="collapse-expand-1" title="Mở rộng - thu gọn code"><span></span></div><div class="copycode" data-value="copycodetagfor-1" title="Copy code"><span></span></div></div></div><div class="formatcodecontent" id="collapse-expand-1"><div id="copycodetagfor-1"><code class="language-cs hljs "><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> Main(<span class="hljs-keyword">string</span>[] args)
+        {
+            <span class="hljs-comment">// Kiểu số nguyên</span>
+            <span class="hljs-keyword">byte</span> BienByte = <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">short</span> BienShort = <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">int</span> BienInt = <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">long</span> BienLong = <span class="hljs-number">10</span>;
+
+            <span class="hljs-comment">// Kiểu số thực</span>
+            <span class="hljs-keyword">float</span> BienFloat = <span class="hljs-number">10.9</span>f; <span class="hljs-comment">// Giá trị của biến kiểu float phải có hậu tố f hoặc F. </span>
+            <span class="hljs-keyword">double</span> BienDouble = <span class="hljs-number">10.9</span>; <span class="hljs-comment">// Giá trị của biến kiểu double không cần hậu tố.</span>
+            <span class="hljs-keyword">decimal</span> BienDecimal = <span class="hljs-number">10.9</span>m; <span class="hljs-comment">// Giá trị của biến kiểu decimal phải có hậu tố m.</span>
+
+            <span class="hljs-comment">// Kiểu ký tự và kiểu chuỗi</span>
+            <span class="hljs-keyword">char</span> BienChar = <span class="hljs-string">'K'</span>; <span class="hljs-comment">// Giá trị của biến kiểu ký tự nằm trong cặp dấu '' (nháy đơn).</span>
+            <span class="hljs-keyword">string</span> BienString = <span class="hljs-string">"Kteam"</span>; <span class="hljs-comment">// Giá trị của biến kiểu chuỗi nằm trong cặp dấu "" (nháy kép).</span>
+
+            Console.ReadKey();
+        }
+</code></div><div class="formatnumber"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div></div></div></pre>
+
+<p>Các bạn chú ý vào cách khai báo, khởi tạo giá trị cho các biến.</p>
+
+<hr>
+<p><span style="color:#b22222"><strong>Ví dụ 2:</strong></span> Một số thao tác liên quan đến biến và kiểu dữ liệu.</p>
+
+<pre><div class="headcode"><div class="tabscode"></div><div class="formatright"><div class="collapse-expand" data-value="collapse-expand-2" title="Mở rộng - thu gọn code"><span></span></div><div class="copycode" data-value="copycodetagfor-2" title="Copy code"><span></span></div></div></div><div class="formatcodecontent" id="collapse-expand-2"><div id="copycodetagfor-2"><code class="language-cs hljs "><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> Main(<span class="hljs-keyword">string</span>[] args)
+        {
+            <span class="hljs-comment">// Kiểu số nguyên</span>
+            <span class="hljs-keyword">byte</span> BienByte = <span class="hljs-number">3</span>;
+            <span class="hljs-keyword">short</span> BienShort = <span class="hljs-number">9</span>;
+            <span class="hljs-keyword">int</span> BienInt = <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">long</span> BienLong = <span class="hljs-number">0</span>;
+
+BienLong = BienByte; <span class="hljs-comment">// BienLong có kiểu dữ liệu lớn hơn BienByte nên giá trị BienByte có thể gán qua cho BienLong</span>
+            Console.WriteLine(<span class="hljs-string">" BienLong = "</span> + BienLong);
+
+            BienLong = BienInt; <span class="hljs-comment">// tương tự như trên</span>
+            Console.WriteLine(<span class="hljs-string">" BienLong = {0}"</span>, BienLong);
+            
+            BienShort = BienByte; <span class="hljs-comment">// tương tự như trên</span>
+            Console.WriteLine(<span class="hljs-string">" BienShort = "</span> + BienShort);
+            
+            BienInt = BienShort; <span class="hljs-comment">// tương tự như trên</span>
+            Console.WriteLine(<span class="hljs-string">" BienInt = "</span> + BienInt);
+
+            Console.ReadKey();
+        }
+</code></div><div class="formatnumber"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div></div></div></pre>
+
+<p>Ở ví dụ này chúng ta kiểm chứng lại xem việc gán giá trị từ biến có kiểu dữ liệu nhỏ hơn sang biến có kiểu dữ liệu lớn hơn có được hay không. Và kết quả sau khi chạy chương trình:</p>
+
+<p style="text-align:center"><img alt="Kiểu dữ liệu trong C#,C# cơ bản, tự học C#, Kteam, Howkteam,Kiểu dữ liệu dựng sẵn,Kiểu dữ liệu do người dùng định nghĩa,Kiểu dữ liệu tham chiếu,reference" src="./Kiểu dữ liệu trong C# _ How Kteam_files/2_Kiểu dữ liệu trong C#_Howkteam_com.png" style="height:342px; margin-bottom:10px; margin-top:10px; width:286px"></p>
+
+<p>Qua kết quả chạy, ta thấy giá trị của các biến thay đổi nên việc gán giá trị như vậy là có thể được.</p>
+
+<hr>
+<p><span style="color:#b22222"><strong>Ví dụ 3: </strong></span>Những lỗi cần lưu ý.</p>
+
+<pre><div class="headcode"><div class="tabscode"></div><div class="formatright"><div class="collapse-expand" data-value="collapse-expand-3" title="Mở rộng - thu gọn code"><span></span></div><div class="copycode" data-value="copycodetagfor-3" title="Copy code"><span></span></div></div></div><div class="formatcodecontent" id="collapse-expand-3"><div id="copycodetagfor-3"><code class="language-cs hljs "><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> Main(<span class="hljs-keyword">string</span>[] args)
+        {
+            <span class="hljs-keyword">int</span> a;
+            Console.WriteLine(<span class="hljs-string">" a = "</span> + a); <span class="hljs-comment">// Lỗi vì biến a không thể sử dụng khi chưa có giá trị.</span>
+
+            <span class="hljs-keyword">int</span> b = <span class="hljs-number">10.9</span>; <span class="hljs-comment">// Lỗi vì b là biến kiểu số nguyên nên không thể nhận giá trị ngoài số nguyên.</span>
+
+<span class="hljs-keyword">byte</span> c = <span class="hljs-number">1093</span>; <span class="hljs-comment">// Lỗi vì c là biến kiểu byte mà kiểu byte có miền giá trị từ -128 đến 127 nên không thể nhận giá ngoài vùng này được.</span>
+
+<span class="hljs-keyword">string</span> d = <span class="hljs-string">'K'</span>; <span class="hljs-comment">// Lỗi vì không thể gán giá trị ký tự vào biến kiểu chuỗi được mặc dù chuỗi có thể hiểu là tập hợp nhiều ký tự. Có thể sửa bẳng cặp dấu "" thay vì ''. </span>
+
+            <span class="hljs-keyword">long</span> e = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// Lỗi vì không thể gán null cho biến kiểu long, int, byte, . . .</span>
+            <span class="hljs-keyword">long</span>? f = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// Cách khắc phục là thêm dấu ? vào sau kiểu dữ liệu. Lúc này kiểu dữ liệu của f là long?</span>
+
+            <span class="hljs-keyword">int</span> g = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">byte</span> h = g; <span class="hljs-comment">// Lỗi vì giá trị của biến có kiểu dữ liệu lớn hơn không thể gán cho biến có kiểu dữ liệu nhỏ hơn mặc dù trong trường hợp này ta thấy số 10 đều có thể gán cho 2 biến.</span>
+
+            <span class="hljs-keyword">string</span> k = <span class="hljs-string">"Kteam"</span>;
+Console.WriteLine(<span class="hljs-string">" k = "</span> + K); <span class="hljs-comment">// Lỗi vì phía trên khai báo biến k còn khi sử dụng là biến K (C# có phân biệt chữ hoa, thường cần lưu ý để tránh gặp lỗi)</span>
+
+            Console.ReadKey();
+        }
+</code></div><div class="formatnumber"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div></div></div></pre>
+
+<p>Chương trình này là minh họa những lỗi thường gặp khi làm việc với biến và kiểu dữ liệu. Các bạn cần lưu ý để tránh những lỗi cơ bản này.</p>
+
+<hr>
+<h2 id="docout-9">Kết luận</h2>
+
+<p>Nội dung bài này giúp các bạn nắm được:</p>
+
+<ul>
+	<li>Khái niệm về kiểu dữ liệu và tại sao lại phải sử dụng kiểu dữ liệu.</li>
+	<li>Phân loại kiểu dữ liệu và ý nghĩa của các kiểu dữ liệu dựng sẵn cơ bản.</li>
+	<li>Phân biệt giữa bộ nhớ Stack và Heap.</li>
+	<li>Ví dụ chương trình sử dụng kiểu dữ liệu và những lỗi lập trình thường gặp về phần này.</li>
+</ul>
+
+<p>Bài học sau chúng ta sẽ cùng tìm hiểu một khái niệm tiếp theo đó là <strong><a href="https://www.howkteam.vn/redirect?Id=Y%2fHKZv6fbvNJnzXtx4Ic0rZRqPOVzQSxG20E6RGIOYF0RNefu1d98B4HtWO%2fHAY%2bSnZkJ3PptKTWmvBKAgYxAg%3d%3d" target="_blank">TOÁN TỬ TRONG C#</a></strong>.</p>
+
+<p>Cảm ơn các bạn đã theo dõi bài viết. Hãy để lại bình luận hoặc góp ý của mình để phát triển bài viết tốt hơn. Đừng quên “<strong>Luyện tập – Thử thách – Không ngại khó</strong>”&nbsp;</p>
+
+                                        <hr>
+                                        <h2 id="docout-10">Tải xuống</h2>
+
+<div class="mb-20">
+    <h3 id="docout-11">Tài liệu</h3>
+    <p>Nhằm phục vụ mục đích học tập Offline của cộng đồng, <span class="font-w600" style="color:#800080">Kteam</span> hỗ trợ tính năng lưu trữ nội dung bài học <span style="color:#ff6600"><strong>Kiểu dữ liệu trong C#</strong></span> dưới dạng file PDF trong link bên dưới.</p>
+    <p>Ngoài ra, bạn cũng có thể tìm thấy các tài liệu được đóng góp từ cộng đồng ở mục <a href="https://www.howkteam.vn/documentation" target="_blank">TÀI LIỆU</a> trên thư viện <a class="font-w600" href="https://www.howkteam.vn/" target="_blank">Howkteam.com</a></p>
+    <blockquote>
+        <p>Đừng quên <strong><span style="color:#ff0000">like</span></strong> và <strong><span style="color:#ff0000">share</span></strong> để ủng hộ Kteam và tác giả nhé!</p>
+    </blockquote>
+    <a href="https://www.howkteam.vn/redirect?Id=%2fVFWH6SyqU3P%2f6cySeX4JdfJ4aEKKczoUjjbHwNVFxP2P1SDdfm2kxAoxbl6Ik9y%2bJ2DBr%2bJG0nLMmtqDlIs%2fg%3d%3d" target="_blank"><img src="./Kiểu dữ liệu trong C# _ How Kteam_files/PDF.png" style="height: 50px !important"></a>
+</div>
+                                    
+<hr>
+<h2 id="docout-12">Thảo luận</h2>
+<p>Nếu bạn có bất kỳ khó khăn hay thắc mắc gì về khóa học, đừng ngần ngại đặt câu hỏi trong phần <a href="javascript:void(0)" data-toggle="scroll-to" data-target="#comment-wrapper" data-speed="fast" target="_blank">BÌNH LUẬN</a> bên dưới hoặc trong mục <a href="https://www.howkteam.vn/question" target="_blank">HỎI &amp; ĐÁP</a> trên thư viện <a class="font-w600" href="https://www.howkteam.vn/" target="_blank">Howkteam.com</a> để nhận được sự hỗ trợ từ cộng đồng.</p>
+
+<div class="media mb-10">
+    <img src="./Kiểu dữ liệu trong C# _ How Kteam_files/kteam.png" class="mr-10" style="height: 50px !important">
+    <div class="media-body align-self-center font-w600">
+        <a href="https://www.howkteam.vn/question" target="_blank">CỘNG ĐỒNG HỎI ĐÁP HOWKTEAM.COM</a>
+    </div>
+</div>
+<div class="media mb-10">
+    <img src="./Kiểu dữ liệu trong C# _ How Kteam_files/fb_kteam.png" class="mr-10" style="height: 50px !important">
+    <div class="media-body align-self-center font-w600">
+        <a href="https://www.facebook.com/groups/howkteam/" target="_blank">GROUP THẢO LUẬN FACEBOOK</a>
+    </div>
+</div>
+
+                                    
+<div class="my-15">
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9004889619110409" data-ad-slot="9044410578" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:704px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:704px;background-color:transparent;"></ins></ins></ins>
+    <script>
+        //window.addEventListener('load', function () {
+        //    (adsbygoogle = window.adsbygoogle || []).push({});
+        //});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="d-none d-lg-block doc-out-fixed-top" id="document-outline-desktop" style="width: 231.786px; height: 520px;">
+                                    <p class="font-size-h5 font-w600 mb-5">
+                                        Nội dung bài viết
+                                        
+                                    </p>
+                                    <div class="document-outline"><ul class="docout-root-wrap"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-0" class="">Dẫn nhập</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-1" class="">Nội dung</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-2" class="">Kiểu dữ liệu là gì? Tại sao phải có kiểu dữ liệu?</a><ul class="docout-child-wrap docout-child-wrap-1"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-3" class="">Tại sao phải có kiểu dữ liệu?</a></li></ul></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-4" class="">Phân loại kiểu dữ liệu và ý nghĩa của từng kiểu dữ liệu</a><ul class="docout-child-wrap docout-child-wrap-1"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-5" class="">Kiểu dữ liệu giá trị (value):</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-6" class="active">Kiểu dữ liệu tham chiếu (reference):</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-7">Một số lưu ý khi sử dụng các kiểu dữ liệu trên:</a></li></ul></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-8">Ví dụ chương trình sử dụng kiểu dữ liệu</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-9">Kết luận</a></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-10">Tải xuống</a><ul class="docout-child-wrap docout-child-wrap-1"><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-11">Tài liệu</a></li></ul></li><li><a href="https://www.howkteam.vn/Learn/Lecture/53#docout-12">Thảo luận</a></li></ul>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-xl-4" style="height: auto !important; min-height: 0px !important;">
+                <div class="row" style="height: auto !important;">
+                    <div class="col-12">
+                        <div class="block block-rounded block-fx-shadow" id="author-wrapper">
+                            <div class="block-header">
+                                <h3 class="block-title font-w600">Tác giả/Dịch giả</h3>
+                            </div>
+                            <div class="block-content block-content-full pt-0">
+                                <div class="media">
+                                    <a class="media-left pr-20" href="https://www.howkteam.vn/users/12e3dcb4-2cdf-4696-8ca2-977289a74ada">
+                                        <img class="media-object avatar-lg" src="./Kiểu dữ liệu trong C# _ How Kteam_files/qjmwr4yekn6elpdihqzd.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="font-size-lg font-w600 text-black mb-10">
+                                            <a class="" href="https://www.howkteam.vn/users/12e3dcb4-2cdf-4696-8ca2-977289a74ada">Trần Thành Vi Thanh</a>
+                                        </div>
+                                        <div class="mb-10">
+                                            <p>Mỗi buổi sáng thức dậy, bạn có 2 lựa chọn, tiếp tục ngủ để mơ những giấc mơ hoặc thức dậy và theo đuổi chúng!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" style="height: auto !important; min-height: 0px !important;">
+                        <div class="block block-rounded block-fx-shadow" id="course-wrapper" style="height: auto !important;">
+                            <div class="block-header">
+                                <h3 class="block-title font-w600">Khóa học</h3>
+                            </div>
+                            <div class="block-content block-content-full pt-0" style="height: auto !important;">
+                                <p>
+                                    <a class="h4" href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban-1">Khóa học lập trình C# căn bản</a>
+                                </p>
+                                <div style="height: auto !important;"><p style="text-align:center"><img alt="" src="./Kiểu dữ liệu trong C# _ How Kteam_files/Thumbnail.jpg" style="height:169px; margin-bottom:10px; margin-top:10px; width:300px"></p>
+
+<p>Bạn mới bắt đầu học lập trình? Bạn đang muốn học thêm ngôn ngữ lập trình mới? C# là lựa chọn hoàn hảo để đáp ứng các nhu cầu trên.</p>
+
+<p><span style="color:#0099ff"><strong>Ngôn ngữ C# </strong></span>là một ngôn ngữ mới, cấu trúc rõ ràng, dễ hiểu và dễ học. C# thừa hưởng những ưu việt từ ngôn ngữ Java, C, C++ cũng như khắc phục được những hạn chế của các ngôn ngữ này. C# là ngôn ngữ lập trình hướng đối tượng được phát triển bởi Microsoft, được xây dựng dựa trên C++ và Java.</p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: none; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9004889619110409" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 0px;"><ins id="aswift_5_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 272px; background-color: transparent;"><ins id="aswift_5_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 272px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0;width:272px;height:600px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="272" height="600" frameborder="0" src="./Kiểu dữ liệu trong C# _ How Kteam_files/ads(4).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!5" data-google-query-id="CJP-pr7ikOsCFcJfFQgdIrEIIA" data-load-complete="true"></iframe></ins></ins></ins></div>
+
+<p>Khoá học lần này sẽ mang đến toàn bộ những kiến thức cơ bản về C#. Chào mừng các bạn đã đến với khoá học <span style="color:#ff6600"><strong>LẬP TRÌNH C# CƠ BẢN</strong></span> của Kteam.</p>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="block block-rounded block-fx-shadow" id="review-wrapper">
+                            <div class="block-header">
+                                <h3 class="block-title font-w600">Đánh giá</h3>
+                            </div>
+                            <div class="block-content pt-0 asyncPartial" id="review-container" data-url="/review/reviewstats/53?type=Lecture">
+
+<div class="row">
+    <div class="col-4 text-center">
+        <div class="font-size-h1">
+            5.0
+        </div>
+        <a href="https://www.howkteam.vn/Learn/Lecture/53#" class="d-block text-warning font-size-sm mb-5" onclick="createReview(&#39;53&#39;, &#39;Lecture&#39;, &#39;/review/create&#39;); return false;">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+        </a>
+        <div class="mb-10">
+            <span class="fa fa-user fa-fw mr-5"></span>22 đánh giá
+        </div>
+        <a href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="createReview(&#39;53&#39;, &#39;Lecture&#39;, &#39;/review/create&#39;); return false;" class="btn btn-warning text-dark btn-sm btn-block btn-noborder">Đánh giá</a>
+    </div>
+    <div class="col-7">
+            <div class="clearfix position-relative font-size-sm mb-10">
+                <div class="float-left mr-10">
+                    <i class="fa fa-fw fa-star text-warning"></i> 5
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="position-absolute" style="right: -15px; top: 0">
+                    22
+                </div>
+            </div>
+            <div class="clearfix position-relative font-size-sm mb-10">
+                <div class="float-left mr-10">
+                    <i class="fa fa-fw fa-star text-warning"></i> 4
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="position-absolute" style="right: -15px; top: 0">
+                    
+                </div>
+            </div>
+            <div class="clearfix position-relative font-size-sm mb-10">
+                <div class="float-left mr-10">
+                    <i class="fa fa-fw fa-star text-warning"></i> 3
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="position-absolute" style="right: -15px; top: 0">
+                    
+                </div>
+            </div>
+            <div class="clearfix position-relative font-size-sm mb-10">
+                <div class="float-left mr-10">
+                    <i class="fa fa-fw fa-star text-warning"></i> 2
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="position-absolute" style="right: -15px; top: 0">
+                    
+                </div>
+            </div>
+            <div class="clearfix position-relative font-size-sm mb-10">
+                <div class="float-left mr-10">
+                    <i class="fa fa-fw fa-star text-warning"></i> 1
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="position-absolute" style="right: -15px; top: 0">
+                    
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+                            <div class="block-content">
+                                <div id="review-list" class="mb-20">
+
+        <div class="comment-item" id="review-12304">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/7286bc44-d796-49cd-8bc7-3a12d5eee77b">
+                        <img class="media-object avatar-sm" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="comment-replacement">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/7286bc44-d796-49cd-8bc7-3a12d5eee77b">mrkimvt</a>
+                            <span>đã đánh giá</span>
+                            <strong class="format-time" title="2020-07-31 15:53:19">10 ngày trước</strong>
+                        </div>
+                        <div class="review-star">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                        </div>
+                        <p class="mb-0 review-body">
+                            rất hay, cảm ơn Kteam ! 
+                        </p>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(12304, &#39;Review&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="review-12234">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/2051d131-c70b-4e97-bd86-fc0caa0cdfa5">
+                        <img class="media-object avatar-sm" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="comment-replacement">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/2051d131-c70b-4e97-bd86-fc0caa0cdfa5">Congdinh280497</a>
+                            <span>đã đánh giá</span>
+                            <strong class="format-time" title="2020-07-06 07:19:53">khoảng 1 tháng trước</strong>
+                        </div>
+                        <div class="review-star">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                        </div>
+                        <p class="mb-0 review-body">
+                            Ad có bài tập để luyện thêm k ạ
+                        </p>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(12234, &#39;Review&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><div class="google-auto-placed" style="width: 100%; height: auto; clear: none; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9004889619110409" data-adsbygoogle-status="done" style="display: block; margin: 20px auto 10px; background-color: transparent; height: 600px;"><ins id="aswift_7_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:272px;background-color:transparent;"><ins id="aswift_7_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:272px;background-color:transparent;"></ins></ins></ins></div>
+        <div class="comment-item" id="review-12154">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/e4524d86-a4db-469a-8a01-f194701d4225">
+                        <img class="media-object avatar-sm" src="./Kiểu dữ liệu trong C# _ How Kteam_files/dyg0nzqqxjloaifwgviu.jpg">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="comment-replacement">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/e4524d86-a4db-469a-8a01-f194701d4225">Nam Đỗ</a>
+                            <span>đã đánh giá</span>
+                            <strong class="format-time" title="2020-06-06 11:27:40">2 tháng trước</strong>
+                        </div>
+                        <div class="review-star">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                        </div>
+                        <p class="mb-0 review-body">
+                            Tuyệt vời
+                        </p>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(12154, &#39;Review&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="review-12150">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/663f4d62-cd64-4713-80a9-ad83a1ff0521">
+                        <img class="media-object avatar-sm" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="comment-replacement">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/663f4d62-cd64-4713-80a9-ad83a1ff0521">caochithuong</a>
+                            <span>đã đánh giá</span>
+                            <strong class="format-time" title="2020-06-04 17:21:54">2 tháng trước</strong>
+                        </div>
+                        <div class="review-star">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                        </div>
+                        <p class="mb-0 review-body">
+                            hay
+                        </p>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(12150, &#39;Review&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="review-2021">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/9769ee27-2d09-43ea-aa06-16ac146b80ef">
+                        <img class="media-object avatar-sm" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="comment-replacement">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/9769ee27-2d09-43ea-aa06-16ac146b80ef">Nhattt</a>
+                            <span>đã đánh giá</span>
+                            <strong class="format-time" title="2020-05-07 08:52:00">3 tháng trước</strong>
+                        </div>
+                        <div class="review-star">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                        </div>
+                        <p class="mb-0 review-body">
+                            
+                        </p>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(2021, &#39;Review&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="review-show-more" class="btn btn-outline-primary btn-block mt-20 mb-20" data-action="/review/reviewlist/53?page=2&amp;type=2">Xem thêm ...</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="block block-rounded block-fx-shadow" id="comment-wrapper">
+                    <div class="block-header">
+                        <h3 class="block-title font-w600">Bình luận</h3>
+                    </div>
+                    <div class="block-content pt-0">
+                            <div class="media">
+        <div class="media-left d-none d-sm-block pr-10">
+            <img class="media-object avatar" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+        </div>
+        <div class="media-body">
+            <div class="text-center p-20 border">
+                <p class="mb-10">Để bình luận, bạn cần đăng nhập bằng tài khoản Howkteam.</p>
+                <a class="btn btn-primary btn-noborder" href="https://www.howkteam.vn/account/login?ReturnUrl=%2FLearn%2FLecture%2F53">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+
+                    </div>
+                    <div class="block-content">
+                        <div id="comment-list" class="mb-20">
+
+        <div class="comment-item" id="comment-item-7483">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/3c202dc1-e668-4e52-a6e2-f48b3040b3a1">
+                        <img class="media-object avatar" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body overflow-y-auto" id="comment-body-7483">
+                    <div class="comment-replacement" id="comment-replacement-7483">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/3c202dc1-e668-4e52-a6e2-f48b3040b3a1">OnlyQuang</a>
+                            <span>đã bình luận</span>
+                            <strong class="format-time" title="2020-03-25 15:59:02">5 tháng trước</strong>
+                        </div>
+                        <div class="comment-body">
+                            
+<p>Mình cảm ơn rất nhiều ạ, chúc anh sẽ có nhiều video hướng dẫn hay hơn như này nữa ạ.</p>
+
+                        </div>
+                    </div>
+                    <div class="comment-footer">
+                        
+
+                        <a class="Upvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(7483, &#39;Upvote&#39;); return false;" data-original-title="Bình luận này rất hữu ích"><i class="far fa-thumbs-up font-size-h5 fa-fw"></i><span>1</span></a>
+                        <a class="Downvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(7483, &#39;Downvote&#39;); return false;" data-original-title="Bình luận này không hữu ích"><i class="far fa-thumbs-down font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="OpenReplyForm(7483); return false;">Trả lời</a>
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(7483, &#39;Discuss&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="comment-item-5623">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/15fcecf9-7a75-4a01-b1f2-715d7e0edfeb">
+                        <img class="media-object avatar" src="./Kiểu dữ liệu trong C# _ How Kteam_files/rf1e996izbkib9owwmw9.png">
+                    </a>
+                </div>
+                <div class="media-body overflow-y-auto" id="comment-body-5623">
+                    <div class="comment-replacement" id="comment-replacement-5623">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/15fcecf9-7a75-4a01-b1f2-715d7e0edfeb">Riyata_Chisaki</a>
+                            <span>đã bình luận</span>
+                            <strong class="format-time" title="2019-06-06 09:48:01">khoảng 1 năm trước</strong>
+                        </div>
+                        <div class="comment-body">
+                            
+<p>Cho em hỏi công dụng của giá trị NULL là gì vậy&nbsp;?</p>
+
+                        </div>
+                    </div>
+                    <div class="comment-footer">
+                        
+
+                        <a class="Upvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(5623, &#39;Upvote&#39;); return false;" data-original-title="Bình luận này rất hữu ích"><i class="far fa-thumbs-up font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="Downvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(5623, &#39;Downvote&#39;); return false;" data-original-title="Bình luận này không hữu ích"><i class="far fa-thumbs-down font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="OpenReplyForm(5623); return false;">Trả lời</a>
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(5623, &#39;Discuss&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                        <button class="btn btn-link btn-showReply" data-id="5623" data-count="1" data-show="-1" data-action="/discuss/replylist/5623">Xem tất cả 1 câu trả lời</button>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="comment-item-2005">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/4c237893-e572-451d-b6fa-8b7dbf5e1b1f">
+                        <img class="media-object avatar" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body overflow-y-auto" id="comment-body-2005">
+                    <div class="comment-replacement" id="comment-replacement-2005">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/4c237893-e572-451d-b6fa-8b7dbf5e1b1f">lê vũ</a>
+                            <span>đã bình luận</span>
+                            <strong class="format-time" title="2018-09-27 10:03:42">2 năm trước</strong>
+                        </div>
+                        <div class="comment-body">
+                            
+<p>anh ơi, trong ví dụ 2 e chưa hiểu tại sao lúc viết console.WriteLine thì bên trong ()lúc dùng dấu "," lúc dùng dấu "+"</p>
+<p>Console.WriteLine(" BienLong = {0}", BienLong);<br>
+Console.WriteLine(" BienShort = " + BienShort);</p>
+
+                        </div>
+                    </div>
+                    <div class="comment-footer">
+                        
+
+                        <a class="Upvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(2005, &#39;Upvote&#39;); return false;" data-original-title="Bình luận này rất hữu ích"><i class="far fa-thumbs-up font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="Downvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(2005, &#39;Downvote&#39;); return false;" data-original-title="Bình luận này không hữu ích"><i class="far fa-thumbs-down font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="OpenReplyForm(2005); return false;">Trả lời</a>
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(2005, &#39;Discuss&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                        <button class="btn btn-link btn-showReply" data-id="2005" data-count="1" data-show="-1" data-action="/discuss/replylist/2005">Xem tất cả 1 câu trả lời</button>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="comment-item-1775">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/4bcf11a0-28b9-4494-80d1-432d318b29c3">
+                        <img class="media-object avatar" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body overflow-y-auto" id="comment-body-1775">
+                    <div class="comment-replacement" id="comment-replacement-1775">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/4bcf11a0-28b9-4494-80d1-432d318b29c3">pvanquyen1610</a>
+                            <span>đã bình luận</span>
+                            <strong class="format-time" title="2018-07-10 15:33:24">2 năm trước</strong>
+                        </div>
+                        <div class="comment-body">
+                            
+<p>Đã like + Rất cảm ơn các anh đã có những bài viết rất rất hay</p>
+
+                        </div>
+                    </div>
+                    <div class="comment-footer">
+                        
+
+                        <a class="Upvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(1775, &#39;Upvote&#39;); return false;" data-original-title="Bình luận này rất hữu ích"><i class="far fa-thumbs-up font-size-h5 fa-fw"></i><span>1</span></a>
+                        <a class="Downvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(1775, &#39;Downvote&#39;); return false;" data-original-title="Bình luận này không hữu ích"><i class="far fa-thumbs-down font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="OpenReplyForm(1775); return false;">Trả lời</a>
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(1775, &#39;Discuss&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-item" id="comment-item-1678">
+            <div class="media">
+                <div class="media-left">
+                    <a href="https://www.howkteam.vn/users/95ef02f1-3688-42e7-8fe4-37a2fe616644">
+                        <img class="media-object avatar" src="./Kiểu dữ liệu trong C# _ How Kteam_files/avatar.png">
+                    </a>
+                </div>
+                <div class="media-body overflow-y-auto" id="comment-body-1678">
+                    <div class="comment-replacement" id="comment-replacement-1678">
+                        <div class="comment-heading text-muted">
+                            <a class="comment-author-name" href="https://www.howkteam.vn/users/95ef02f1-3688-42e7-8fe4-37a2fe616644">lamvandinh2k1</a>
+                            <span>đã bình luận</span>
+                            <strong class="format-time" title="2018-05-23 12:20:04">2 năm trước</strong>
+                        </div>
+                        <div class="comment-body">
+                            
+<p>&lt;script&gt;alert('XXX')&lt;/script&gt;</p>
+
+                        </div>
+                    </div>
+                    <div class="comment-footer">
+                        
+
+                        <a class="Upvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(1678, &#39;Upvote&#39;); return false;" data-original-title="Bình luận này rất hữu ích"><i class="far fa-thumbs-up font-size-h5 fa-fw"></i><span>0</span></a>
+                        <a class="Downvote text-secondary js-tooltip-enabled" href="https://www.howkteam.vn/Learn/Lecture/53#" data-toggle="tooltip" data-placement="bottom" title="" onclick="voteDiscuss(1678, &#39;Downvote&#39;); return false;" data-original-title="Bình luận này không hữu ích"><i class="far fa-thumbs-down font-size-h5 fa-fw"></i><span>1</span></a>
+                        <a class="" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="OpenReplyForm(1678); return false;">Trả lời</a>
+                        <a class="float-right report-discuss" href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.createReport(1678, &#39;Discuss&#39;); return false;">
+                            <i class="far fa-flag fa-fw" aria-hidden="true"></i> Báo cáo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="cmt-show-more" class="btn btn-outline-primary btn-block mt-20 mb-20" data-action="/discuss/commentlist/53?page=2&amp;type=2">Xem thêm ...</button>
+
+                        </div>
+                        <!-- END Discussion -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Lecture -->
+<!-- Quick learn modal -->
+
+<div class="quick-view-modal">
+    <a href="javascript:void(0);" class="quick-view-close"><i class="fas fa-fw fa-times fa-2x"></i></a>
+    <div class="d-flex">
+        <div class="quick-view-left-container" style="display: none">
+            <div class="block-content">
+                <h5 class="mb-0"><i class="fas fa-fw fa-list"></i> Danh sách bài giảng</h5>
+            </div>
+            <div class="quick-view-lecture-list" data-action="/learn/quickviewlecturelist" data-id="" data-activeid="">
+
+            </div>
+            <div class="quick-view-toolbar">
+                <a href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="openRightSideBarQuickView(); return false;" class="btn btn-primary"><i class="fas fa-fw fa-book"></i> Nội dung</a>
+            </div>
+        </div>
+        <div class="quick-view-center-container">
+            <iframe class="h-100 w-100" id="quickViewVideo" type="text/html" data-src="" frameborder="0" allowfullscreen="" src="./Kiểu dữ liệu trong C# _ How Kteam_files/saved_resource(1).html"></iframe>
+            <div class="d-flex align-items-center h-100">
+                <h5 class="text-white mx-auto"> Không có video.</h5>
+            </div>
+        </div>
+        <div class="quick-view-right-container" style="display: none">
+            <div class="quick-view-toolbar">
+                <a href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="openLeftSideBarQuickView(); return false;" class="btn btn-primary"><i class="fas fa-fw fa-list"></i> Danh sách bài giảng</a>
+            </div>
+            <div class="quick-view-content p-20"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent">
+                <div class="block-header bg-gd-primary">
+                    <h3 class="block-title font-w600">Đánh giá và Nhận xét</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                            <i class="si si-close"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <input type="hidden" id="HistoryTargetId" value="53">
+    <input type="hidden" id="HistoryTargetType" value="Lecture">
+    <input type="hidden" id="HistoryAction" value="/history/create">
+
+    <!-- Discuss data -->
+    <input type="hidden" id="DiscussTargetId" value="53">
+    <input type="hidden" id="DiscussTargetType" value="2">
+</div>
+
+
+
+        <div class="focus-backdrop fade show"></div></main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        
+<footer id="page-footer" class="mt-30" style="opacity: 1;">
+    <div class="content">
+        <div class="page-content">
+            <div class="mb-20">
+                <a href="https://www.howkteam.vn/">
+                    <img class="img-fluid" src="./Kiểu dữ liệu trong C# _ How Kteam_files/kteam_Purple _100x46.png">
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-6">
+                    <p class="font-w600 mb-10 font-size-h5">Thông tin Kteam</p>
+                    <ul class="list-unstyled mb-30">
+                        <li><a href="https://www.howkteam.vn/about">Về Kteam</a></li>
+                        <li><a href="https://www.howkteam.vn/about">Dịch vụ</a></li>
+                        <li><a href="https://www.howkteam.vn/about/contact">Liên hệ</a></li>
+                    </ul>
+                    <p class="font-w600 mb-10 font-size-h5">Đóng góp từ cộng đồng</p>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.howkteam.vn/donate">Tài trợ</a></li>
+                        <li><a href="https://www.howkteam.vn/about/supporters">Người ủng hộ</a></li>
+                    </ul>
+
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <p class="font-w600 mb-10 font-size-h5">Lĩnh vực</p>
+                    <ul class="list-unstyled asyncPartial" data-url="/common/footercategories">    <li>
+        <a href="https://www.howkteam.vn/learn/lap-trinh-7">Lập trình</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/microsoft-office-2016-11">Microsoft Office 2016</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/it-phan-mem-13">IT &amp; Phần mềm</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/do-hoa-hinh-anh-21">Đồ họa hình ảnh</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/kinh-te-26">Kinh tế</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/ngoai-ngu-32">Ngoại ngữ</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/ky-nang-mem-34">Kỹ năng mềm</a>
+    </li>
+    <li>
+        <a href="https://www.howkteam.vn/learn/tin-tuc-49">Tin tức</a>
+    </li>
+</ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <p class="font-w600 mb-10 font-size-h5">Khoá học</p>
+                    <ul class="list-unstyled asyncPartial" data-url="/common/footercourses">    <li><a href="https://www.howkteam.vn/course/microsoft-word-2016-2">Microsoft Word 2016</a></li>
+    <li><a href="https://www.howkteam.vn/course/microsoft-excel-2016-9">Microsoft Excel 2016</a></li>
+    <li><a href="https://www.howkteam.vn/course/microsoft-powerpoint-2016-13">Microsoft PowerPoint 2016</a></li>
+    <li><a href="https://www.howkteam.vn/course/khoa-hoc-lap-trinh-android-co-ban-3">Khóa học lập trình Android cơ bản</a></li>
+    <li><a href="https://www.howkteam.vn/course/goc-lap-trinh-vien-5">Góc lập trình viên</a></li>
+    <li><a href="https://www.howkteam.vn/course/danh-cho-nguoi-moi-6">Dành cho người mới</a></li>
+    <li><a href="https://www.howkteam.vn/course/huong-dan-cai-dat-7">Hướng dẫn cài đặt</a></li>
+    <li><a href="https://www.howkteam.vn/course/thu-thuat-may-tinh-8">Thủ thuật máy tính</a></li>
+
+<li><a href="https://www.howkteam.vn/Learn">Xem thêm...</a></li></ul>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <p class="font-w600 mb-10 font-size-h5">Cộng đồng</p>
+                    <ul class="list-unstyled mb-30">
+                        <li><a href="https://www.howkteam.vn/questions">Hỏi đáp</a></li>
+                        <li><a href="https://www.howkteam.vn/Learn/Lecture/53#">Tài liệu</a></li>
+                        <li><a href="https://www.howkteam.vn/Learn/Lecture/53#">Chiến dịch</a></li>
+                    </ul>
+
+                    <p class="font-w600 mb-10 font-size-h5">Liên kết</p>
+                    <ul class="list-unstyled">
+                        <li><a target="_blank" href="https://www.vted.vn/">Vted - Học toán online chất lượng cao</a></li>
+                        <li><a target="_blank" href="http://laptrinhvb.net/">Lập trình VB.NET</a></li>
+                        <li><a target="_blank" href="https://linuxteamvietnam.us/">Linux Team Việt Nam</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <p class="font-w600 mb-10 font-size-h5">Kết nối với Kteam</p>
+                    <p class="mb-5">Kết nối với Kteam qua mạng xã hội</p>
+                    <div class="icon-format mb-30">
+                        <a href="https://www.facebook.com/howkteam/" class="mr-5"><i class="fab fa-facebook-square fa-2x"></i></a>
+                        <a href="https://www.youtube.com/kteam"><i class="fab fa-youtube-square fa-2x"></i></a>
+                    </div>
+                    <p class="font-w600 mb-10 font-size-h5 mt-20">Chứng nhận</p>
+                    <a href="http://www.dmca.com/Protection/Status.aspx?ID=69d56ff4-063f-4275-811c-3338b7e3d82e&amp;refurl=https://www.howkteam.vn/Learn/Lecture/53" title="DMCA.com Protection Status" class="dmca-badge">
+                        <img src="./Kiểu dữ liệu trong C# _ How Kteam_files/dmca-badge-w150-5x1-01.png">
+                    </a>
+                    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/DMCABadgeHelper.min.js.tải xuống"></script>
+                </div>
+            </div>
+
+            <hr>
+            <div class="mb-10">
+                <span>Howkteam © 2020</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <a href="https://www.howkteam.vn/Learn/Lecture/53#" onclick="Kteam.scrollToPosition(0); return false;" class="btn-scrollTop btn btn-primary btn-noborder btn-circle" style="display: inline;"><i class="fas fa-chevron-up"></i></a>
+
+<form action="https://www.howkteam.vn/learn/lecture/53" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="a-s7ygmFP355NXTC-rCoX0uVVbYFM332sRycCrxHwX-mM5e1_iZV9R78RuP9Nx55vw54hNpZ5Tb7ljnWuCCpAp21w0ibN9Grc4XLLAxb5bs1"></form></footer>
+
+
+<div class="modal fade" id="authen-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent">
+                <div class="block-header bg-primary">
+                    <h3 class="block-title font-w600">Yêu cầu đăng nhập</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                            <i class="si si-close"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <div class="text-center p-20 border">
+                        <p class="mb-10">Để sử dụng tính năng này, Bạn cần đăng nhập bằng tài khoản Howkteam.</p>
+                        <a class="btn btn-primary btn-noborder" href="https://www.howkteam.vn/account/login?ReturnUrl=%2FLearn%2FLecture%2F53">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="adblockModal" style="display: none;">
+    <div class="text-center">
+        <i class="fas fa-eye-slash fa-3x text-danger mb-20"></i>
+        <h4 class="text-danger font-w600">AD BLOCKER DETECTED</h4>
+        <p>
+            Để xem được nội dung và giúp Kteam duy trì hoạt động. <br>
+            <strong>Bạn vui lòng tắt Adblock trên website <a href="https://www.howkteam.vn/Learn/Lecture/www.howkteam.com">www.howkteam.vn</a> nhé!</strong>
+        </p>
+    </div>
+</div>
+
+<div class="modal fade" id="adsPopupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bg-transparent">
+            <div class="block block-themed block-transparent">
+                <div class="block-header bg-transparent">
+                    <h3 class="block-title font-w600"></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                            <i class="si si-close fa-2x"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content block-content-sm text-center">
+                    <a href="https://www.howkteam.vn/Learn/Lecture/53#" target="_blank">
+                        <img src="https://www.howkteam.vn/Learn/Lecture/53" class="img-fluid w-100">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- END Footer -->
+    </div>
+    <!-- END Page Container -->
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/common-libs"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/hubs"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/theme-libs"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/js"></script>
+
+
+    
+    <script>
+        $("a.side-nav-learn").addClass("active");
+    </script>
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/cke"></script><script type="text/javascript" src="./Kiểu dữ liệu trong C# _ How Kteam_files/loader.js.tải xuống"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/event.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/editor_basic.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/env.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/ckeditor_basic.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/log.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/dom.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/tools.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/dtd.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/event.js(1).tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/domobject.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/node.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/window.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/document.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/nodelist.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/element.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/documentfragment.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/walker.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/range.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/iterator.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/command.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/ckeditor_base.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/config.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/filter.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/focusmanager.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/keystrokehandler.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/lang.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/scriptloader.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/resourcemanager.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/plugins.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/ui.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/editor.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/htmlparser.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/basicwriter.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/node.js(1).tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/comment.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/text.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/cdata.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/fragment.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/filter.js(1).tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/htmldataprocessor.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/element.js(1).tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/template.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/ckeditor.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/inline.js.tải xuống" type="text/javascript"></script><iframe id="google_osd_static_frame_9142130309934" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Kiểu dữ liệu trong C# _ How Kteam_files/saved_resource(2).html"></iframe><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/themedui.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/editable.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/selection.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/style.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/comment.js(1).tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/elementpath.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/text.js(1).tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/rangelist.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/skin.js.tải xuống" type="text/javascript"></script><script src="./Kiểu dữ liệu trong C# _ How Kteam_files/_bootstrap.js.tải xuống" type="text/javascript"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/ckadapter"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/cmt(1)"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/review"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/quicklearn"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/docout"></script>
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/focus-learn"></script>
+
+
+    <script src="./Kiểu dữ liệu trong C# _ How Kteam_files/latest.js.tải xuống" async=""></script>
+    <script type="text/x-mathjax-config;executed=true">
+        MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
+        showMathMenu: false,
+        tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"], ["\\[","\\]"] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"], linebreaks: { automatic: true, width: "75% container" } },
+        
+        });
+    </script>
+
+
+    <!--============ Facebook =================== -->
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.2&appId=1105161409531317';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!--============ End facebook =================== -->
+    <!--============ Google Analytics =================== -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-84622810-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!--============ End Google Analytics =================== -->
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./Kiểu dữ liệu trong C# _ How Kteam_files/ads(5).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!3" data-load-complete="true"></iframe></ins></ins></ins></body><iframe id="google_esf" name="google_esf" src="./Kiểu dữ liệu trong C# _ How Kteam_files/zrt_lookup.html" data-ad-client="ca-pub-9004889619110409" style="display: none;"></iframe></html>

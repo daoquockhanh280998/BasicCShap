@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        public static void Main()
+        {
+
+            int i, j, n;
+            int[,] arr1 = new int[10, 10];
+            int[] tong_hang = new int[10];
+            int[] tong_cot = new int[10];
+
+
+            Console.Write("Nhap kich co ma tran : ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Nhap cac phan tu vao trong ma tran:\n");
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("Phan tu - [{0}],[{1}]: ", i, j);
+                    arr1[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.Write("In ma tran:\n");
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                    Console.Write("{0}  ", arr1[i, j]);
+                Console.Write("\n");
+            }
+            Console.Write("Thiết lập các phần tử nằm dưới dg chéo = 0:\n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("\n");
+                for (j = 0; j < n; j++)
+                {
+                    if (i > j)
+                    {
+                        arr1[i, j] = 0;
+                    }
+                    Console.Write("{0}  ", arr1[i, j]);
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+}
+

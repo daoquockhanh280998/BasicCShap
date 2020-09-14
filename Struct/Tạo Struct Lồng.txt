@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        struct NhanVien
+        {
+            public string HoVaTen;
+            public NgayThangNamSinh ntns;
+        }
+        struct NgayThangNamSinh
+        {
+            public int date;
+            public int month;
+            public int year;
+        }
+      
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            int dd = 0, mm = 0,yyyy = 0;
+            string name;
+            int total = 0;
+            Console.Write("Mời Nhập Số lƯỢNG NV CẦN LƯU :");
+            total = Convert.ToInt32(Console.ReadLine());
+
+            NhanVien[] nv = new NhanVien[total];
+
+            for (int i = 0; i < total; i++)
+            {
+                Console.Write("Mời Nhập Tên NV :");
+                name = Console.ReadLine();
+                nv[i].HoVaTen = name;
+                Console.Write("Mời Nhập NGÀY SINH :");
+                nv[i].ntns.date = dd = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Mời Nhập Tháng Sinh :");
+                nv[i].ntns.date = mm = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Mời Nhập Năm Sinh :");
+                nv[i].ntns.date = yyyy = Convert.ToInt32(Console.ReadLine());
+
+            }
+
+
+
+        }
+    }
+}
+
+

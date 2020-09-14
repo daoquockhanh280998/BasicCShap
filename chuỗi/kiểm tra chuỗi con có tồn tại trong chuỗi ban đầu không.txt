@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str1, str2; //Khai bao hai chuoi
+            bool m;
+
+            Console.Write("\nKiem tra chuoi con trong C#:\n");
+            Console.Write("-----------------------------------------\n");
+            Console.Write("Nhap mot chuoi: ");
+            str1 = Console.ReadLine();
+
+            Console.Write("Nhap chuoi con de kiem tra: ");
+            str2 = Console.ReadLine();
+            m = str1.Contains(str2); // ham nay tra ve gia tri boolean  
+            if (m) // kiem tra true, false 
+                Console.Write("Chuoi con co mat trong chuoi ban dau.\n\n");
+            else
+                Console.Write("Chuoi con khong co mat trong chuoi ban dau. \n\n");
+
+            Console.ReadKey();
+
+        }
+    }
+
+}
+

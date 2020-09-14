@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        struct BookStruct
+        {
+            public string TenSach;
+            public string TacGia;
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int n;
+            Console.Write("Mời Nhập n :");
+            n = Convert.ToInt32(Console.ReadLine());
+            BookStruct[] bt = new BookStruct[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Nhap tt sách {0}", i + 1);
+                Console.Write("Nhap tên  sách : ");
+                bt[i].TenSach = Console.ReadLine();
+                Console.Write("Nhap tên  tác giả : ");
+                bt[i].TacGia = Console.ReadLine();
+                Console.WriteLine();
+
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("{0}: Ten Sách : {1} , Tac Gia : {2}",i+1, bt[i].TenSach, bt[i].TacGia);
+            }
+          
+            
+            
+
+
+        }
+    }
+}
+
+

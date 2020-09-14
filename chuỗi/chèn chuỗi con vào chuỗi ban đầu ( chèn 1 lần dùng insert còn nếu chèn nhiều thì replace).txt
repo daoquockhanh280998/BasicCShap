@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace baitap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //không xóa
+            Console.OutputEncoding = Encoding.UTF8;
+            //không xóa
+            string a; //khai bao chuoi ban dau
+            string b;
+            string c;
+            string d;
+            string m="" ;
+            string n ;
+            int vt = 0, start = -1;
+
+            Console.WriteLine("Nhap chuoi ban dau: ");
+            a = Console.ReadLine();
+            Console.Write("Nhap chuoi con can tim: ");
+            b = Console.ReadLine();
+            Console.Write("Nhap chuoi can chen: ");
+            c = Console.ReadLine();
+           
+            vt = a.IndexOf(b);
+            c = " " + c.Trim() + " " + b;
+            a = a.Replace(b, c);
+            Console.Write("Chuoi ket qua: {0}\n\n", a);
+
+            Console.ReadKey();
+        }
+    }
+
+}
+

@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+
+namespace baitap
+{
+    class Program
+    {
+        public void insert(long[] maxArr, int val)
+        {
+            int i = 0;
+            while (i < maxArr.Length)
+            {
+                if (val == maxArr[i])
+                {
+                    return;//k dc trùng
+                }
+                else if (val > maxArr[i])
+                {
+                    //chèn vào maxArr[i]
+                    break;
+                }
+                else //val < maxArr
+                {
+                    i++;
+                }
+            }
+            if (i < maxArr.Length)
+            {
+                for (int j = maxArr.Length - 2; j >= i; j--)
+                {
+                    maxArr[j + 1] = maxArr[j];
+                }
+                maxArr[i] = val;
+            }
+        }
+        public int ThirdMax(int[] nums)
+        {
+            long[] maxArr = { long.MinValue, long.MinValue, long.MinValue };
+            for (int i = 0; i < nums.Length; i++)
+            {
+                insert(maxArr, nums[i]);
+            }
+
+            if (maxArr[2] == long.MinValue)
+            {
+                return (int)maxArr[0];
+            }
+            return (int)maxArr[2];
+        }
+        public void X(int[] n)
+        {
+            for (int i = 0; i < n.Length; i++)
+            {
+                Console.Write("{0} ", n[i]);
+            }
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int[] n = { 1, 1, 4, 2, 1, 3 };
+
+
+            Program program = new Program();
+            Console.WriteLine("{0}", program.HeightChecker(n));
+
+
+
+
+
+
+        }
+    }
+}
+
+
