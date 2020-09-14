@@ -8,7 +8,7 @@ namespace VD_VỀ_CLASS
 {
     class Cat
     {
-        public double Weight;
+        public double Weight;///asdfadawda
         public double Height;
 
         // tạo contructor k tham số truyền vào 
