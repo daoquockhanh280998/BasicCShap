@@ -1,0 +1,112 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Enumeration;
+using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+
+class Solution
+{
+    class PersonInfo
+    {
+        private string name;
+        private int score;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public int Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
+
+        public PersonInfo(string name, int score)
+        {
+            this.name = name;
+            this.score = score;
+        }
+        public override string ToString()
+        {
+            return "Name: " + name + " | Score: " + score;
+        }
+
+    }
+
+    public class SortPerson : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            //. ép về PesonInfo
+            PersonInfo p1 = x as PersonInfo;
+            PersonInfo p2 = y as PersonInfo;
+
+            if (p1 == null || p2 == null)
+            {
+                throw new InvalidOperationException();
+            }
+            else
+            {
+                if (p1.Score < p2.Score)
+                {
+                    return 1;
+                }
+                else if (p1.Score == p2.Score)
+                {
+                    
+                    if (string.Compare(p1.Name, p2.Name) == 1) // p1 > p2
+                    {
+                        return 1;
+                    }
+                    else if (string.Compare(p1.Name, p2.Name) == 0) // 2 chuỗi = nhau
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                  
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+        }
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.OutputEncoding = Encoding.Unicode;
+
+        ArrayList arrayList = new ArrayList();
+        arrayList.Add(new PersonInfo("Khanh", 22));
+        arrayList.Add(new PersonInfo("Duc", 25));
+        arrayList.Add(new PersonInfo("Thang", 19));
+        arrayList.Add(new PersonInfo("ju", 22));
+
+        Console.WriteLine("Ds ban đầu là: ");
+        foreach (PersonInfo item in arrayList)
+        {
+            Console.WriteLine(item.ToString());
+        }
+
+        arrayList.Sort(new SortPerson());
+
+        Console.WriteLine();
+        Console.WriteLine("in ds đã sx theo điểm");
+        foreach (PersonInfo item in arrayList)
+        {
+            Console.WriteLine(item.ToString());
+        }
+
+        Console.ReadKey();
+    }
+
+
+}
